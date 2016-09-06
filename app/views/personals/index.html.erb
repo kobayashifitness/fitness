@@ -1,0 +1,43 @@
+<h1>Listing personals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Age</th>
+      <th>Datetime</th>
+      <th>Fat</th>
+      <th>Goal</th>
+      <th>Height</th>
+      <th>Muscle</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Weight</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personals.each do |personal| %>
+      <tr>
+        <td><%= personal.age %></td>
+        <td><%= personal.datetime %></td>
+        <td><%= personal.fat %></td>
+        <td><%= personal.goal %></td>
+        <td><%= personal.height %></td>
+        <td><%= personal.muscle %></td>
+        <td><%= personal.name %></td>
+        <td><%= personal.sex %></td>
+        <td><%= personal.weight %></td>
+        <td><%= link_to 'Show', personal %></td>
+        <td><%= link_to 'Edit', edit_personal_path(personal) %></td>
+        <td><%= link_to 'Destroy', personal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personal', new_personal_path %>
