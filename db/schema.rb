@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160906165305) do
+ActiveRecord::Schema.define(version: 20160910064228) do
+
+  create_table "heights", force: true do |t|
+    t.float    "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "personals", force: true do |t|
     t.integer  "age"
