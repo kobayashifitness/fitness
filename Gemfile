@@ -43,3 +43,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'io-console'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+gem 'bootstrap-generators'
