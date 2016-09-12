@@ -1,7 +1,9 @@
 RailsMuscle::Application.routes.draw do
-  resources :personals
+  resources :diaries
 
-get '/' => 'personals#new'
+  devise_for :users
+root 'diaries#index' 
+get '/' => 'diaries#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
