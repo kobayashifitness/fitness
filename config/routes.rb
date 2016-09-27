@@ -1,6 +1,4 @@
 RailsMuscle::Application.routes.draw do
-  resources :diaries
-
   devise_for :users
   root to: 'diaries#index' 
   get 'diaries/index'
