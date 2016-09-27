@@ -26,6 +26,10 @@ ActiveRecord::Schema.define(version: 20160927070520) do
   create_table "goals", force: true do |t|
     t.integer  "user_id"
     t.string   "goal"
+  end
+
+  create_table "mymenus", force: true do |t|
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
