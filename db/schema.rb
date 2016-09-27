@@ -11,11 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 20160927083143) do
-=======
-ActiveRecord::Schema.define(version: 20160927070520) do
->>>>>>> 100aebf47616093481f99a8e97ad24bbc05505e9
+
 
   create_table "muscle_dialies", force: true do |t|
     t.integer  "user_id"
