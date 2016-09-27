@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20160927083143) do
 
   create_table "goals", force: true do |t|
@@ -35,6 +36,11 @@ ActiveRecord::Schema.define(version: 20160927083143) do
   create_table "muscle_of_events", force: true do |t|
     t.string   "event_id"
     t.string   "muscle_id"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "event_name"
+    t.string   "class"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,13 +52,39 @@ ActiveRecord::Schema.define(version: 20160927083143) do
     t.integer  "num"
     t.integer  "set_num"
     t.string   "day"
+  end
+
+  create_table "goals", force: true do |t|
+    t.integer  "user_id"
+    t.string   "goal"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+
   create_table "muscles", force: true do |t|
     t.string   "part"
     t.string   "recove_time"
+  end
+
+  create_table "heights", force: true do |t|
+    t.float    "height"
+    t.string   "datetime"
+    t.integer  "profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "muscle_masses", force: true do |t|
+    t.integer  "profile_id"
+    t.float    "muscle_mass"
+    t.float    "l_arm"
+    t.float    "r_arm"
+    t.float    "l_leg"
+    t.float    "r_leg"
+    t.float    "body"
+    t.float    "fat"
+    t.string   "datetime"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -67,6 +99,15 @@ ActiveRecord::Schema.define(version: 20160927083143) do
     t.integer  "user_id"
     t.integer  "protein_intake"
     t.string   "datetime"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", force: true do |t|
+    t.string   "name"
+    t.string   "sex"
+    t.string   "birthday"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -90,5 +131,13 @@ ActiveRecord::Schema.define(version: 20160927083143) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "weights", force: true do |t|
+    t.float    "weight"
+    t.string   "datetime"
+    t.integer  "profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
