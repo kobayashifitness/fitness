@@ -11,16 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927070445) do
+ActiveRecord::Schema.define(version: 20160927083143) do
 
-  create_table "diaries", force: true do |t|
-    t.float    "weight"
+  create_table "muscle_dialies", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.float    "wight"
     t.integer  "num"
-    t.integer  "set"
+    t.integer  "set_num"
+    t.string   "date"
     t.string   "note"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "event"
+  end
+
+  create_table "muscle_of_events", force: true do |t|
+    t.string   "event_id"
+    t.string   "muscle_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "muscle_tasks", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "mymenu_id"
+    t.float    "wight"
+    t.integer  "num"
+    t.integer  "set_num"
+    t.string   "day"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "muscles", force: true do |t|
+    t.string   "part"
+    t.string   "recove_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "mymenus", force: true do |t|
@@ -29,16 +56,10 @@ ActiveRecord::Schema.define(version: 20160927070445) do
     t.datetime "updated_at"
   end
 
-  create_table "personals", force: true do |t|
-    t.integer  "age"
+  create_table "proteins", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "protein_intake"
     t.string   "datetime"
-    t.float    "fat"
-    t.string   "goal"
-    t.float    "height"
-    t.float    "muscle"
-    t.string   "name"
-    t.string   "sex"
-    t.float    "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
