@@ -11,9 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 
 ActiveRecord::Schema.define(version: 20160927083143) do
 
+=======
+ActiveRecord::Schema.define(version: 20160927083143) do
+
+  create_table "goals", force: true do |t|
+    t.integer  "user_id"
+    t.string   "goal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+>>>>>>> d56066b677ea3b50fd8a2cecdcdd5a1d1fe39b7b
 
   create_table "muscle_dialies", force: true do |t|
     t.integer  "user_id"
@@ -50,11 +61,6 @@ ActiveRecord::Schema.define(version: 20160927083143) do
     t.string   "recove_time"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "goals", force: true do |t|
-    t.integer  "user_id"
-    t.string   "goal"
   end
 
   create_table "mymenus", force: true do |t|
