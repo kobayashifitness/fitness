@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927070520) do
+ActiveRecord::Schema.define(version: 20160927082831) do
 
   create_table "diaries", force: true do |t|
     t.float    "weight"
@@ -23,9 +23,40 @@ ActiveRecord::Schema.define(version: 20160927070520) do
     t.string   "event"
   end
 
+  create_table "events", force: true do |t|
+    t.string   "event_name"
+    t.string   "class"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "goals", force: true do |t|
     t.integer  "user_id"
     t.string   "goal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "heights", force: true do |t|
+    t.float    "height"
+    t.string   "datetime"
+    t.integer  "profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "muscle_masses", force: true do |t|
+    t.integer  "profile_id"
+    t.float    "muscle_mass"
+    t.float    "l_arm"
+    t.float    "r_arm"
+    t.float    "l_leg"
+    t.float    "r_leg"
+    t.float    "body"
+    t.float    "fat"
+    t.string   "datetime"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "mymenus", force: true do |t|
@@ -44,6 +75,15 @@ ActiveRecord::Schema.define(version: 20160927070520) do
     t.string   "name"
     t.string   "sex"
     t.float    "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", force: true do |t|
+    t.string   "name"
+    t.string   "sex"
+    t.string   "birthday"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -67,5 +107,13 @@ ActiveRecord::Schema.define(version: 20160927070520) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "weights", force: true do |t|
+    t.float    "weight"
+    t.string   "datetime"
+    t.integer  "profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
