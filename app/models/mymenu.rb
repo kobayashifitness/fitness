@@ -1,3 +1,5 @@
 class Mymenu < ActiveRecord::Base
-belogs_to :user
+belongs_to :user
+has_many :muscle_tasks
+
 end

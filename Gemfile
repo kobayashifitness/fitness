@@ -53,3 +53,4 @@ gem 'less-rails'
 gem 'devise'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
+gem 'rails-erd', group: [:development, :test]

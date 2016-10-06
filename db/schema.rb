@@ -11,12 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20160927083143) do
+
+  create_table "events", force: true do |t|
+    t.string   "event_name"
+    t.string   "class"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "goals", force: true do |t|
     t.integer  "user_id"
     t.string   "goal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "heights", force: true do |t|
+    t.float    "height"
+    t.string   "datetime"
+    t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,48 +43,6 @@ ActiveRecord::Schema.define(version: 20160927083143) do
     t.integer  "set_num"
     t.string   "date"
     t.string   "note"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "muscle_of_events", force: true do |t|
-    t.string   "event_id"
-    t.string   "muscle_id"
-  end
-
-  create_table "events", force: true do |t|
-    t.string   "event_name"
-    t.string   "class"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "muscle_tasks", force: true do |t|
-    t.integer  "event_id"
-    t.integer  "mymenu_id"
-    t.float    "wight"
-    t.integer  "num"
-    t.integer  "set_num"
-    t.string   "day"
-  end
-
-  create_table "goals", force: true do |t|
-    t.integer  "user_id"
-    t.string   "goal"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-
-  create_table "muscles", force: true do |t|
-    t.string   "part"
-    t.string   "recove_time"
-  end
-
-  create_table "heights", force: true do |t|
-    t.float    "height"
-    t.string   "datetime"
-    t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -89,16 +61,33 @@ ActiveRecord::Schema.define(version: 20160927083143) do
     t.datetime "updated_at"
   end
 
-  create_table "mymenus", force: true do |t|
-    t.integer  "user_id"
+  create_table "muscle_of_events", force: true do |t|
+    t.string   "event_id"
+    t.string   "muscle_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "proteins", force: true do |t|
+  create_table "muscle_tasks", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "mymenu_id"
+    t.float    "wight"
+    t.integer  "num"
+    t.integer  "set_num"
+    t.string   "day"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "muscles", force: true do |t|
+    t.string   "part"
+    t.string   "recove_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mymenus", force: true do |t|
     t.integer  "user_id"
-    t.integer  "protein_intake"
-    t.string   "datetime"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -108,6 +97,14 @@ ActiveRecord::Schema.define(version: 20160927083143) do
     t.string   "sex"
     t.string   "birthday"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "proteins", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "protein_intake"
+    t.string   "datetime"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
