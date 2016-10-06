@@ -1,3 +1,8 @@
-
+<% if user_signed_in? %>
 
 <input type = "date" min="2014-01-01" max="2050-12-31" name="dailyday">
+
+<% else %>
+筋トレ日記へようこそ<br>
+ユーザー登録してください
+<% end %>
