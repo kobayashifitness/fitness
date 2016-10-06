@@ -1,7 +1,35 @@
 <% if user_signed_in? %>
-
-<input type = "date" min="2014-01-01" max="2050-12-31" name="dailyday">
-
+<div class="row">
+  <div class="col-sm-3">
+    <div class="list-group">
+      <a href="#" class="list-group-item active">リンク</a>
+      <a href="#" class="list-group-item">ランキング</a>
+      <a href="#" class="list-group-item">グラフ</a>
+      <a href="#" class="list-group-item">豆知識</a>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <div class="row">
+      <div class="list-group">
+        <a href="#" class="list-group-item active">目標</a>
+        <a href="#" class="list-group-item">今年：</a>
+        <a href="#" class="list-group-item">今月：</a>
+        <a href="#" class="list-group-item">今週：</a>
+      </div>
+    </div>
+    <div class="row">
+      日記の日付を選択してください
+      <input type = "date" min="2014-01-01" max="2050-12-31" name="dailyday">
+    </div>
+    <div class="row">
+      <h2>
+        <span class="label label-success">上腕二頭筋</span>
+        <span class="label label-warning">胸筋</span>
+        <span class="label label-danger">背筋</span>
+      </h2>
+    </div>
+  </div>
+</div>
 <% else %>
 筋トレ日記へようこそ<br>
 ユーザー登録してください
