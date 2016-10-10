@@ -46,11 +46,11 @@ end
 
 gem 'io-console'
 
+# for bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootstrap-generators'
-gem 'less-rails'
+
 gem 'devise'
 gem 'therubyracer'
-gem 'twitter-bootstrap-rails'
 gem 'rails-erd', group: [:development, :test]
