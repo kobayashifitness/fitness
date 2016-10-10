@@ -3,6 +3,7 @@
 @import "bootstrap.scss";
 
 body {
+  background: url("/images/bg.jpg") no-repeat center top / cover;
   padding-top: $navbar-height + 10px;
 }
 
