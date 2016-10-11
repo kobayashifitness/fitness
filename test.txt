@@ -1,7 +1,0 @@
-/var/lib/gems/2.3.0/gems/activesupport-4.0.2/lib/active_support/values/time_zone.rb:282: warning: circular argument reference - now
-** Invoke db:seed (first_time)
-** Execute db:seed
-** Invoke db:abort_if_pending_migrations (first_time)
-** Invoke environment (first_time)
-** Execute environment
-** Execute db:abort_if_pending_migrations
