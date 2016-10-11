@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927083143) do
+ActiveRecord::Schema.define(version: 20161011083446) do
 
   create_table "events", force: true do |t|
     t.string   "event_name"
-    t.string   "class"
+    t.string   "event_class"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -124,6 +124,9 @@ ActiveRecord::Schema.define(version: 20160927083143) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "goals"
+    t.integer  "failed_attempts",        default: 0,  null: false
+    t.datetime "locked_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
