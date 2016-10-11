@@ -1,7 +1,8 @@
 <% if user_signed_in? %>
 <div class="row">
+
   <div class="col-sm-3">
-    <div class="panel panel-primary list-group">
+    <div class="list-group">
       <a href="#" class="list-group-item active">筋肉リンク</a>
       <a href="/" class="list-group-item"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ホーム</a>
       <a href="#" class="list-group-item"><span class="glyphicon glyphicon-king" aria-hidden="true"></span> ランキング</a>
@@ -13,7 +14,7 @@
 
   <div class="col-sm-9">
 
-    <div class="panel panel-primary list-group">
+    <div class="list-group">
       <a href="#" class="list-group-item active">筋肉目標</a>
       <a href="#" class="list-group-item">今年：</a>
       <a href="#" class="list-group-item">今月：</a>
@@ -26,28 +27,28 @@
       </div>
       <div class="panel-body">
         <div class="form-group row">
-          <label for="input-date" class="col-xs-3 col-form-label">日付</label>
-          <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="dailyday" class="form-control input-sm" value= <%= @date %> ></div>
+          <label for="input-date" class="col-xs-4 col-form-label">日付</label>
+          <div class="col-xs-8"><input type = "date" min="2014-01-01" max="2050-12-31" name="dailyday" class="form-control input-sm" value= <%= @date %> ></div>
         </div>
         <div class="form-group row">
-          <label for="input-set" class="col-xs-3 col-form-label">メニュー</label>
-          <div class="col-xs-9"><select class="form-control input-sm" placeholder="行ったセット数">
+          <label for="input-set" class="col-xs-4 col-form-label">メニュー</label>
+          <div class="col-xs-8"><select class="form-control input-sm" placeholder="行ったセット数">
             <option>スクワット</option>
             <option>ベンチプレス</option>
             <option>デッドリフト</option>
           </select></div>
         </div>
         <div class="form-group row">
-          <label for="input-weight" class="col-xs-3 col-form-label">重量</label>
-          <div class="col-xs-9"><input type="number" name="weight" class="form-control input-sm" placeholder="負荷の重量 [kg]"></div>
+          <label for="input-weight" class="col-xs-4 col-form-label">重量</label>
+          <div class="col-xs-8"><input type="number" name="weight" class="form-control input-sm" placeholder="負荷の重量 [kg]"></div>
         </div>
         <div class="form-group row">
-          <label for="input-set" class="col-xs-3 col-form-label">セット数</label>
-          <div class="col-xs-9"><input type="number" name="set" class="form-control input-sm" placeholder="行ったセット数"></div>
+          <label for="input-set" class="col-xs-4 col-form-label">セット数</label>
+          <div class="col-xs-8"><input type="number" name="set" class="form-control input-sm" placeholder="行ったセット数"></div>
         </div>
         <div class="form-group row">
-          <label for="input-num" class="col-xs-3 col-form-label">回数</label>
-          <div class="col-xs-9"><input type="number" name="num" class="form-control input-sm" placeholder="１セットあたりの回数"></div>
+          <label for="input-num" class="col-xs-4 col-form-label">回数</label>
+          <div class="col-xs-8"><input type="number" name="num" class="form-control input-sm" placeholder="１セットあたりの回数"></div>
         </div>
         <button type="submit" class="btn btn-primary">記入</button>
       </div>
