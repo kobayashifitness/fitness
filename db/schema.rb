@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012120104) do
+ActiveRecord::Schema.define(version: 20161012122417) do
 
   create_table "events", force: true do |t|
     t.string   "event_name"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20161012120104) do
 
   create_table "heights", force: true do |t|
     t.float    "height"
-    t.string   "datetime"
+    t.datetime "datetime",   limit: 255
     t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20161012120104) do
     t.float    "wight"
     t.integer  "num"
     t.integer  "set_num"
-    t.string   "datetime"
+    t.datetime "datetime",   limit: 255
     t.string   "note"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20161012120104) do
     t.float    "r_leg"
     t.float    "body"
     t.float    "fat"
-    t.string   "datetime"
+    t.datetime "datetime",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20161012120104) do
   create_table "profiles", force: true do |t|
     t.string   "name"
     t.string   "sex"
-    t.string   "birthday"
+    t.date     "birthday",   limit: 255
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 20161012120104) do
   create_table "proteins", force: true do |t|
     t.integer  "user_id"
     t.integer  "protein_intake"
-    t.string   "datetime"
+    t.datetime "datetime",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
