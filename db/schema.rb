@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(version: 20161011140341) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "goals"
     t.integer  "failed_attempts",        default: 0,  null: false
     t.datetime "locked_at"
   end
