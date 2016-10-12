@@ -24,11 +24,20 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .carousel-indicators .active {
+  height: auto;;
+  width: 100px;
+  color: #ffffff;
   background-color: #337ab7;
+  border-radius: 2px;
 }
 
 .carousel-indicators li {
+  text-indent: 0px;
+  height: auto;
+  width: 100px;
   border: 2px solid #337ab7;
+  border-radius: 2px;
+  color: #337ab7;
   background-color: #000 \9;
   background-color: rgba(0, 0, 0, 0);
 }
