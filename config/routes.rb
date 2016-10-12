@@ -1,6 +1,7 @@
 RailsMuscle::Application.routes.draw do
   devise_for :users
   root to: 'homes#index'
+  
   resources :goals
   get '/:date/diary' => 'homes#diary', as: 'diary_home'
   get '/wiki' => 'homes#wiki'
