@@ -23,11 +23,24 @@ function SetOrderId() {
   <div class="col-sm-3">
     <div class="list-group">
       <a href="#" class="list-group-item active">筋肉リンク</a>
-      <a href="/" class="list-group-item"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ホーム</a>
-      <a href="#" class="list-group-item"><span class="glyphicon glyphicon-king" aria-hidden="true"></span> ランキング</a>
-      <a href="#" class="list-group-item"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> グラフ</a>
-      <a href="/wiki" class="list-group-item"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> 豆知識</a>
-      <a href="/" class="list-group-item"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 設定</a>
+      <%= link_to " ホーム", "/", { :class => "list-group-item glyphicon glyphicon-home" } %>
+      <%= link_to " ランキング", "/", { :class => "list-group-item glyphicon glyphicon-king" } %>
+      <%= link_to " グラフ", "/", { :class => "list-group-item glyphicon glyphicon-stats" } %>
+      <%= link_to " 豆知識", "/wiki", { :class => "list-group-item glyphicon glyphicon-education" } %>
+      <%= link_to " 設定", "/", { :class => "list-group-item glyphicon glyphicon-cog" } %>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">筋肉日記を見る</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group row">
+          <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
+          <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date%>" class="form-control input-sm"></div>
+        </div>
+        <input type="button" name="link" value="日記へ" onclick="jump()">
+      </div>
     </div>
   </div>
 
@@ -124,39 +137,24 @@ function SetOrderId() {
 
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">筋肉日記を見る</h3>
+        <h3 class="panel-title">筋肉コンディション</h3>
       </div>
-
       <div class="panel-body">
-        <form name='mainForm'>
-          <div class="form-group row">
-            <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-            <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date%>" class="form-control input-sm"></div>
-          </div>
-          <input type="button" name="link" value="日記へ" onclick="jump()">
-        </div>
+        <h3>
+          <span class="label label-success">上腕二頭筋</span>
+          <span class="label label-warning">胸筋</span>
+          <span class="label label-danger">背筋</span>
+        </h3>
       </div>
-
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">筋肉コンディション</h3>
-        </div>
-        <div class="panel-body">
-          <h3>
-            <span class="label label-success">上腕二頭筋</span>
-            <span class="label label-warning">胸筋</span>
-            <span class="label label-danger">背筋</span>
-          </h3>
-        </div>
-      </div>
-
-
     </div>
+
+
   </div>
-  <% else %>
-  <div class="starter-template">
-    <h1>筋トレ日記にようこそ！</h1>
-    <p class="lead">デカい、キレてる、ナイスバルク。</p>
-    <a class="btn btn-primary btn-lg" href="/users/sign_in" role="button">サインイン</a>
-  </div>
-  <% end %>
+</div>
+<% else %>
+<div class="starter-template">
+  <h1>筋トレ日記にようこそ！</h1>
+  <p class="lead">デカい、キレてる、ナイスバルク。</p>
+  <a class="btn btn-primary btn-lg" href="/users/sign_in" role="button">サインイン</a>
+</div>
+<% end %>
