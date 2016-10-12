@@ -19,6 +19,7 @@ document.forms.mainForm.diaryday.value = Year + "-" + Month + "-" + Day;
 
 <% if user_signed_in? %>
 <div class="row">
+
   <div class="col-sm-3">
     <div class="list-group">
       <a href="#" class="list-group-item active">筋肉リンク</a>
@@ -29,7 +30,9 @@ document.forms.mainForm.diaryday.value = Year + "-" + Month + "-" + Day;
       <a href="/" class="list-group-item"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 設定</a>
     </div>
   </div>
+
   <div class="col-sm-9">
+
     <div class="row">
       <div class="list-group">
         <a href="/" class="list-group-item active">筋肉目標</a>
@@ -37,19 +40,21 @@ document.forms.mainForm.diaryday.value = Year + "-" + Month + "-" + Day;
         <a href="/goals/new" class="list-group-item">今月：<%if @month_goal != nil%><%= @month_goal.goal %><%end%></a>
         <a href="/goals/new" class="list-group-item">今週：<%if @week_goal != nil%><%= @week_goal.goal %><%end%></a>
       </div>
+
     </div>
-    <div class="row">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">筋肉日記を書く</h3>
-        </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">筋肉日記を書く</h3>
+      </div>
+
         <div class="panel-body">
           <form name='mainForm'>
           <div class="form-group row">
             <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-            <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday"  class="form-control input-sm"></div>
+            <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date%>" class="form-control input-sm"></div>
           </div>
-          <script> SetOrderId(); </script>
+          <!-- <script> SetOrderId(); </script> -->
           <!-- <div class="form-group row">
             <label for="input-set" class="col-xs-3 col-form-label">メニュー</label>
             <div class="col-xs-9"><select class="form-control input-sm" placeholder="行ったセット数">
@@ -70,29 +75,26 @@ document.forms.mainForm.diaryday.value = Year + "-" + Month + "-" + Day;
             <label for="input-num" class="col-xs-3 col-form-label">回数</label>
             <div class="col-xs-9"><input type="number" name="num" class="form-control input-sm" placeholder="１セットあたりの回数"></div>
           </div> -->
-          <!-- <button type="submit" class="btn btn-primary">記入</button> -->
+          <!-- <button type="submit" class="btn btn-primary"  >記入</button>  -->
+          <%= link_to "日記へ", diary_home_path(@date) %>
+        </div>
+          </div>
 
-            <input type="button" name="link" value="日記へ" onclick="jump()">
-          </form>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">筋肉コンディション</h3>
+            </div>
+            <div class="panel-body">
+              <h3>
+                <span class="label label-success">上腕二頭筋</span>
+                <span class="label label-warning">胸筋</span>
+                <span class="label label-danger">背筋</span>
+              </h3>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">筋肉コンディション</h3>
-        </div>
-        <div class="panel-body">
-          <h3>
-            <span class="label label-success">上腕二頭筋</span>
-            <span class="label label-warning">胸筋</span>
-            <span class="label label-danger">背筋</span>
-          </h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <% else %>
 <div class="starter-template">
   <h1>筋トレ日記にようこそ！</h1>
