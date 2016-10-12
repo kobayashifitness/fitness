@@ -75,8 +75,8 @@ document.forms.mainForm.diaryday.value = Year + "-" + Month + "-" + Day;
             <label for="input-num" class="col-xs-3 col-form-label">回数</label>
             <div class="col-xs-9"><input type="number" name="num" class="form-control input-sm" placeholder="１セットあたりの回数"></div>
           </div> -->
-          <!-- <button type="submit" class="btn btn-primary"  >記入</button>  -->
-          <%= link_to "日記へ", diary_home_path(@date) %>
+          <input type="button" name="link" value="日記へ" onclick="jump()">
+          <!-- <%= link_to "日記へ", diary_home_path(@date) %> -->
         </div>
           </div>
 

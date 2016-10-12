@@ -14,6 +14,6 @@ class HomesController < ApplicationController
   end
 
  def diary
-
+   @date = params[:date]
  end
 end
