@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011083446) do
+ActiveRecord::Schema.define(version: 20161011140341) do
 
   create_table "events", force: true do |t|
     t.string   "event_name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20161011083446) do
     t.string   "goal"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "span"
   end
 
   create_table "heights", force: true do |t|
@@ -124,7 +125,6 @@ ActiveRecord::Schema.define(version: 20161011083446) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "goals"
     t.integer  "failed_attempts",        default: 0,  null: false
     t.datetime "locked_at"
   end
