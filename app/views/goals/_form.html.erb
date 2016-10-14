@@ -13,8 +13,21 @@
   <% end %>
 
   <div class="form-group">
+    <%= f.label :goal, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :goal, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :span, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <!-- {}で引数optionsをスキップしないとclassが反映されない  -->
+      <%= f.select :span, {"今週の目標"=> "week", "今月の目標" => "month","今年の目標" => "year"}, {}, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit class: "btn btn-primary" %>
+      <%= f.submit "目標を更新", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>

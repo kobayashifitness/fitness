@@ -6,10 +6,4 @@
   <h1>目標の設定</h1>
 </div>
 
-<%= form_for (@goal) do |f| %>
- 目標
-<%= f.text_field :goal %>
- 目標のspan
-<%= f.select :span, {"今週の目標"=> "week", "今月の目標" => "month","今年の目標" => "year"}  %>
-<%= f.submit "保存"  %>
-<% end %>
+<%= render 'form' %>
