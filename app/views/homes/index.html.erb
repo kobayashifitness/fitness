@@ -60,13 +60,23 @@ function SetOrderId() {
     </div>
   </div>
 
+
   <div class="col-sm-9">
 
     <div class="list-group">
       <a href="/" class="list-group-item active">筋肉目標</a>
-      <a href="/goals/new" class="list-group-item">今年：<%if @year_goal != nil %><%= @year_goal.goal %><%end%></a>
-      <a href="/goals/new" class="list-group-item">今月：<%if @month_goal != nil %><%= @month_goal.goal %><%end%></a>
-      <a href="/goals/new" class="list-group-item">今週：<%if @week_goal != nil %><%= @week_goal.goal %><%end%></a>
+
+      <%= link_to "/goals/new", { :class => "list-group-item" } do %>
+      今年：<%if @year_goal != nil %><%= @year_goal.goal %><%end%>
+      <% end %>
+
+      <%= link_to "/goals/new", { :class => "list-group-item" } do %>
+      今月：<%if @month_goal != nil %><%= @month_goal.goal %><%end%>
+      <% end %>
+
+      <%= link_to "/goals/new", { :class => "list-group-item" } do %>
+      今週：<%if @week_goal != nil %><%= @week_goal.goal %><%end%>
+      <% end %>
     </div>
 
     <div class="panel panel-primary">
