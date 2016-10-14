@@ -51,6 +51,9 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootstrap-generators'
 
+# for draw graph
+gem 'chartkick'
+
 gem 'devise'
 gem 'therubyracer'
 gem 'rails-erd', group: [:development, :test]
