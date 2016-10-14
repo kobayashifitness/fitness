@@ -41,7 +41,7 @@ function SetOrderId() {
       <% end %>
 
       <%= link_to "/", { :class => "list-group-item" } do %>
-      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> グラフ
+      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 設定
       <% end %>
 
     </div>
@@ -105,6 +105,14 @@ function SetOrderId() {
             <div class="form-group row">
               <label for="input-weight" class="col-xs-3 col-form-label">体重</label>
               <div class="col-xs-9"><input type="number" name="weight" class="form-control input-sm" placeholder="体重 [kg]"></div>
+            </div>
+            <div class="form-group row">
+              <label for="input-muscle_mass" class="col-xs-3 col-form-label">筋肉量</label>
+              <div class="col-xs-9"><input type="number" name="muscle_mass" class="form-control input-sm" placeholder="筋肉量 [kg]"></div>
+            </div>
+            <div class="form-group row">
+              <label for="input-fat" class="col-xs-3 col-form-label">体脂肪率</label>
+              <div class="col-xs-9"><input type="number" name="fat" class="form-control input-sm" placeholder="体脂肪率 [%]"></div>
             </div>
           </div>
 
