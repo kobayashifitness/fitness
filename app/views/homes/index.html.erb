@@ -116,7 +116,7 @@ function SetOrderId() {
             </div>
           </div>
 
-          <div class="item active" style="padding: 15px 10% 40px 10%;">
+          <div class="item active" style="padding: 15px 10% 60px 10%;">
             <legend>トレーニング</legend>
             <div class="form-group row">
               <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
@@ -145,7 +145,7 @@ function SetOrderId() {
             <input type="button" name="link" value="日記を入力" onclick="jump()">
           </div>
 
-          <div class="item" style="padding: 15px 10% 40px 10%;">
+          <div class="item" style="padding: 15px 10% 60px 10%;">
             <legend>食事管理</legend>
             <div class="form-group row">
               <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
@@ -182,9 +182,18 @@ function SetOrderId() {
       </div>
     </div>
 
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">グラフ</h3>
+      </div>
+      <div class="panel-body">
+        <%= line_chart( {"2016-10-10" => 65.5, "2016-10-11" => 66.0, "2016-10-12" => 65.7}, min: 50, max: 70 ) %>
+      </div>
+    </div>
 
   </div>
 </div>
+
 <% else %>
 <div class="starter-template">
   <h1>筋トレ日記にようこそ！</h1>
