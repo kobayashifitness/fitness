@@ -43,7 +43,6 @@ function SetOrderId() {
       <%= link_to "/", { :class => "list-group-item" } do %>
       <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 設定
       <% end %>
-
     </div>
 
     <div class="panel panel-primary">
@@ -53,7 +52,7 @@ function SetOrderId() {
       <div class="panel-body">
         <div class="form-group row">
           <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-          <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date%>" class="form-control input-sm"></div>
+          <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
         </div>
         <input type="button" name="link" value="日記へ" onclick="jump()">
       </div>
@@ -90,13 +89,14 @@ function SetOrderId() {
           <li data-target="#carousel-data-input" data-slide-to="1" class="active">トレーニング</li>
           <li data-target="#carousel-data-input" data-slide-to="2" class="">食事管理</li>
         </ol>
+
         <div class="carousel-inner" role="listbox">
 
           <div class="item" style="padding: 15px 10% 60px 10%;">
             <legend>プロフィール</legend>
             <div class="form-group row">
               <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-              <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date%>" class="form-control input-sm"></div>
+              <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
             </div>
             <div class="form-group row">
               <label for="input-height" class="col-xs-3 col-form-label">身長</label>
@@ -120,7 +120,7 @@ function SetOrderId() {
             <legend>トレーニング</legend>
             <div class="form-group row">
               <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-              <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date%>" class="form-control input-sm"></div>
+              <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
             </div>
             <div class="form-group row">
               <label for="input-menu" class="col-xs-3 col-form-label">メニュー</label>
@@ -149,7 +149,7 @@ function SetOrderId() {
             <legend>食事管理</legend>
             <div class="form-group row">
               <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-              <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date%>" class="form-control input-sm"></div>
+              <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
             </div>
             <div class="form-group row">
               <label for="input-protein" class="col-xs-3 col-form-label">タンパク質</label>
