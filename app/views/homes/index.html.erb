@@ -23,11 +23,27 @@ function SetOrderId() {
   <div class="col-sm-3">
     <div class="list-group">
       <a href="#" class="list-group-item active">筋肉リンク</a>
-      <%= link_to " ホーム", "/", { :class => "list-group-item glyphicon glyphicon-home" } %>
-      <%= link_to " ランキング", "/", { :class => "list-group-item glyphicon glyphicon-king" } %>
-      <%= link_to " グラフ", "/", { :class => "list-group-item glyphicon glyphicon-stats" } %>
-      <%= link_to " 豆知識", "/wiki", { :class => "list-group-item glyphicon glyphicon-education" } %>
-      <%= link_to " 設定", "/", { :class => "list-group-item glyphicon glyphicon-cog" } %>
+
+      <%= link_to "/", { :class => "list-group-item" } do %>
+      <span class="glyphicon glyphicon-home" aria-hidden="true"></span> ホーム
+      <% end %>
+
+      <%= link_to "/", { :class => "list-group-item" } do %>
+      <span class="glyphicon glyphicon-king" aria-hidden="true"></span> ランキング
+      <% end %>
+
+      <%= link_to "/", { :class => "list-group-item" } do %>
+      <span class="glyphicon glyphicon-stats" aria-hidden="true"></span> グラフ
+      <% end %>
+
+      <%= link_to "/wiki", { :class => "list-group-item" } do %>
+      <span class="glyphicon glyphicon-education" aria-hidden="true"></span> 豆知識
+      <% end %>
+
+      <%= link_to "/", { :class => "list-group-item" } do %>
+      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> グラフ
+      <% end %>
+
     </div>
 
     <div class="panel panel-primary">
