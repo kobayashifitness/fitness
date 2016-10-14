@@ -53,6 +53,7 @@ gem 'bootstrap-generators'
 
 # for draw graph
 gem 'chartkick'
+gem 'groupdate'
 
 gem 'devise'
 gem 'therubyracer'
