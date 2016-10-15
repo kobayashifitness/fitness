@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015085119) do
+ActiveRecord::Schema.define(version: 20161015085427) do
 
   create_table "events", force: true do |t|
     t.string   "event_name"
@@ -72,12 +72,12 @@ ActiveRecord::Schema.define(version: 20161015085119) do
   create_table "muscle_tasks", force: true do |t|
     t.integer  "event_id"
     t.integer  "mymenu_id"
-    t.float    "wight"
     t.integer  "num"
     t.integer  "set_num"
     t.string   "day"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "weight"
   end
 
   create_table "muscles", force: true do |t|
