@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015085427) do
+ActiveRecord::Schema.define(version: 20161015102601) do
 
   create_table "events", force: true do |t|
     t.string   "event_name"
@@ -139,10 +139,10 @@ ActiveRecord::Schema.define(version: 20161015085427) do
 
   create_table "weights", force: true do |t|
     t.float    "weight"
-    t.string   "datetime"
     t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "datetime"
   end
 
 end
