@@ -142,7 +142,11 @@ function SetOrderId() {
               <label for="input-num" class="col-xs-3 col-form-label">回数</label>
               <div class="col-xs-9"><input type="number" name="num" class="form-control input-sm" placeholder="１セットあたりの回数"></div>
             </div>
-            <input type="button" name="link" value="日記を入力" onclick="jump()">
+            <div class="form-group row">
+              <div class="col-xs-offset-3 col-xs-9">
+                <input class="btn btn-primary" name="commit" type="submit" value="日記を入力">
+              </div>
+            </div>
           </div>
 
           <div class="item" style="padding: 15px 10% 60px 10%;">
