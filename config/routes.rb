@@ -1,12 +1,13 @@
 RailsMuscle::Application.routes.draw do
-  get "profiles/new"
   devise_for :users
   root to: 'homes#index'
 
   resources :goals
+  resources :muscle_diaries
   get '/:date/diary' => 'homes#diary', as: 'diary_home'
   get '/wiki' => 'homes#wiki'
   get '/graph' => 'graphs#index'
+  get "profiles/new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
