@@ -92,74 +92,9 @@ function SetOrderId() {
 
         <div class="carousel-inner" role="listbox">
 
-          <div class="item" style="padding: 15px 10% 60px 10%;">
-            <legend>プロフィール</legend>
-            <div class="form-group row">
-              <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-              <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
-            </div>
-            <div class="form-group row">
-              <label for="input-height" class="col-xs-3 col-form-label">身長</label>
-              <div class="col-xs-9"><input type="number" name="height" class="form-control input-sm" placeholder="身長 [cm]"></div>
-            </div>
-            <div class="form-group row">
-              <label for="input-weight" class="col-xs-3 col-form-label">体重</label>
-              <div class="col-xs-9"><input type="number" name="weight" class="form-control input-sm" placeholder="体重 [kg]"></div>
-            </div>
-            <div class="form-group row">
-              <label for="input-muscle_mass" class="col-xs-3 col-form-label">筋肉量</label>
-              <div class="col-xs-9"><input type="number" name="muscle_mass" class="form-control input-sm" placeholder="筋肉量 [kg]"></div>
-            </div>
-            <div class="form-group row">
-              <label for="input-fat" class="col-xs-3 col-form-label">体脂肪率</label>
-              <div class="col-xs-9"><input type="number" name="fat" class="form-control input-sm" placeholder="体脂肪率 [%]"></div>
-            </div>
-          </div>
-
-          <div class="item active" style="padding: 15px 10% 60px 10%;">
-            <legend>トレーニング</legend>
-            <div class="form-group row">
-              <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-              <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
-            </div>
-            <div class="form-group row">
-              <label for="input-menu" class="col-xs-3 col-form-label">メニュー</label>
-              <div class="col-xs-9"><select class="form-control input-sm" placeholder="行ったセット数">
-                <option>スクワット</option>
-                <option>ベンチプレス</option>
-                <option>デッドリフト</option>
-              </select></div>
-            </div>
-            <div class="form-group row">
-              <label for="input-weight" class="col-xs-3 col-form-label">重量</label>
-              <div class="col-xs-9"><input type="number" name="weight" class="form-control input-sm" placeholder="負荷の重量 [kg]"></div>
-            </div>
-            <div class="form-group row">
-              <label for="input-set" class="col-xs-3 col-form-label">セット数</label>
-              <div class="col-xs-9"><input type="number" name="set" class="form-control input-sm" placeholder="行ったセット数"></div>
-            </div>
-            <div class="form-group row">
-              <label for="input-num" class="col-xs-3 col-form-label">回数</label>
-              <div class="col-xs-9"><input type="number" name="num" class="form-control input-sm" placeholder="１セットあたりの回数"></div>
-            </div>
-            <div class="form-group row">
-              <div class="col-xs-offset-3 col-xs-9">
-                <input class="btn btn-primary" name="commit" type="submit" value="日記を入力">
-              </div>
-            </div>
-          </div>
-
-          <div class="item" style="padding: 15px 10% 60px 10%;">
-            <legend>食事管理</legend>
-            <div class="form-group row">
-              <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-              <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
-            </div>
-            <div class="form-group row">
-              <label for="input-protein" class="col-xs-3 col-form-label">タンパク質</label>
-              <div class="col-xs-9"><input type="number" name="protein" class="form-control input-sm" placeholder="摂取量 [g]"></div>
-            </div>
-          </div>
+          <%= render 'form_profile' %>
+          <%= render 'form_training' %>
+          <%= render 'form_diet' %>
 
         </div>
         <a class="left carousel-control" href="#carousel-data-input" role="button" data-slide="prev" style="width: 8%">

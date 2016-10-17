@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015102601) do
+ActiveRecord::Schema.define(version: 20161014064013) do
 
   create_table "events", force: true do |t|
     t.string   "event_name"
@@ -39,13 +39,13 @@ ActiveRecord::Schema.define(version: 20161015102601) do
   create_table "muscle_diaries", force: true do |t|
     t.integer  "user_id"
     t.integer  "event_id"
+    t.float    "wight"
     t.integer  "num"
     t.integer  "set_num"
     t.datetime "datetime",   limit: 255
     t.string   "note"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "weight"
   end
 
   create_table "muscle_masses", force: true do |t|
@@ -72,12 +72,12 @@ ActiveRecord::Schema.define(version: 20161015102601) do
   create_table "muscle_tasks", force: true do |t|
     t.integer  "event_id"
     t.integer  "mymenu_id"
+    t.float    "wight"
     t.integer  "num"
     t.integer  "set_num"
     t.string   "day"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "weight"
   end
 
   create_table "muscles", force: true do |t|
@@ -110,13 +110,6 @@ ActiveRecord::Schema.define(version: 20161015102601) do
     t.datetime "updated_at"
   end
 
-  create_table "tests", force: true do |t|
-    t.string   "goal"
-    t.string   "span"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -130,6 +123,7 @@ ActiveRecord::Schema.define(version: 20161015102601) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "goals"
     t.integer  "failed_attempts",        default: 0,  null: false
     t.datetime "locked_at"
   end
@@ -139,10 +133,10 @@ ActiveRecord::Schema.define(version: 20161015102601) do
 
   create_table "weights", force: true do |t|
     t.float    "weight"
+    t.string   "datetime"
     t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "datetime"
   end
 
 end
