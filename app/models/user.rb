@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :lockable
 
-  has_one :profile
+  has_one :profile, :autosave => true, dependent: :destroy
   has_one :mymenu
   has_many :goals
   has_many :muscle_diaries
