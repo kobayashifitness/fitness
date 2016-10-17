@@ -1,32 +1,67 @@
 <div class="item active" style="padding: 15px 10% 60px 10%;">
   <legend>トレーニング</legend>
-  <div class="form-group row">
-    <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-    <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
-  </div>
-  <div class="form-group row">
-    <label for="input-menu" class="col-xs-3 col-form-label">メニュー</label>
-    <div class="col-xs-9"><select class="form-control input-sm" placeholder="行ったセット数">
-      <option>スクワット</option>
-      <option>ベンチプレス</option>
-      <option>デッドリフト</option>
-    </select></div>
-  </div>
-  <div class="form-group row">
-    <label for="input-weight" class="col-xs-3 col-form-label">重量</label>
-    <div class="col-xs-9"><input type="number" name="weight" class="form-control input-sm" placeholder="負荷の重量 [kg]"></div>
-  </div>
-  <div class="form-group row">
-    <label for="input-set" class="col-xs-3 col-form-label">セット数</label>
-    <div class="col-xs-9"><input type="number" name="set" class="form-control input-sm" placeholder="行ったセット数"></div>
-  </div>
-  <div class="form-group row">
-    <label for="input-num" class="col-xs-3 col-form-label">回数</label>
-    <div class="col-xs-9"><input type="number" name="num" class="form-control input-sm" placeholder="１セットあたりの回数"></div>
-  </div>
-  <div class="form-group row">
-    <div class="col-xs-offset-3 col-xs-9">
-      <input class="btn btn-primary" name="commit" type="submit" value="日記を入力">
+
+  <%= form_for(@muscle_diary, html: { class: "form-horizontal", role: "form" }) do |f| %>
+    <% if @muscle_diary.errors.any? %>
+      <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4><%= pluralize(@muscle_diary.errors.count, "error") %> prohibited this goal from being saved:</h4>
+
+        <ul>
+        <% @muscle_diary.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label "日付", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.text_field :datetime, class: "form-control" %>
+      </div>
     </div>
-  </div>
+
+    <div class="form-group">
+      <%= f.label "メニュー", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.select :menu, {"スクワット" => "squat", "ベンチプレス" => "bench_press", "デッドリフト" => "dead_lift"}, {}, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "重量", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.number_field :weight, placeholder: "負荷の重量 [kg]", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "回数", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.number_field :num, placeholder: "１セットあたりの回数", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "セット数", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.number_field :set_num, placeholder: "セット数", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "メモ", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.text_field :note, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-xs-offset-3 col-xs-9">
+        <%= f.submit "日記をつける", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+
 </div>
