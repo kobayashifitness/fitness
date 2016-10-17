@@ -40,7 +40,7 @@ function SetOrderId() {
       <span class="glyphicon glyphicon-education" aria-hidden="true"></span> 豆知識
       <% end %>
 
-      <%= link_to "/", { :class => "list-group-item" } do %>
+      <%= link_to "/users/edit", { :class => "list-group-item" } do %>
       <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 設定
       <% end %>
     </div>
@@ -89,7 +89,7 @@ function SetOrderId() {
         <h3 class="panel-title">データ入力</h3>
       </div>
 
-      <div id="carousel-data-input" class="carousel slide" data-ride="carousel" data-interval="false" style="min-height: 470px;">
+      <div id="carousel-data-input" class="carousel slide" data-ride="carousel" data-interval="false" style="min-height: 480px;">
         <ol class="carousel-indicators" style="bottom: 10px">
           <li data-target="#carousel-data-input" data-slide-to="0" class="">プロフィール</li>
           <li data-target="#carousel-data-input" data-slide-to="1" class="active">トレーニング</li>
@@ -124,15 +124,6 @@ function SetOrderId() {
           <span class="label label-warning">胸筋</span>
           <span class="label label-danger">背筋</span>
         </h3>
-      </div>
-    </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">グラフ</h3>
-      </div>
-      <div class="panel-body">
-        <%= line_chart( {"2016-10-10" => 65.5, "2016-10-11" => 66.0, "2016-10-12" => 65.7}, min: 50, max: 70 ) %>
       </div>
     </div>
 
