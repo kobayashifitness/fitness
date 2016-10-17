@@ -25,10 +25,11 @@ class MuscleDiariesController < ApplicationController
   # POST /muscle_diaries.json
   def create
     @muscle_diary = MuscleDiary.new(muscle_diary_params)
+    @muscle_diary.user_id = current_user.id
 
     respond_to do |format|
       if @muscle_diary.save
-        format.html { redirect_to @muscle_diary, notice: 'Muscle diary was successfully created.' }
+        format.html { redirect_to '/', notice: 'Muscle diary was successfully created.' }
         format.json { render action: 'show', status: :created, location: @muscle_diary }
       else
         format.html { render action: 'new' }
@@ -69,6 +70,6 @@ class MuscleDiariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def muscle_diary_params
-      params[:muscle_diary]
+      params.require(:muscle_diary).permit(:menu, :weight, :num, :set_num, :note)
     end
 end
