@@ -22,3 +22,7 @@ CSV.foreach('db/muscle_of_event.csv') do |row|
   MuscleOfEvent.create(:event_id => row[1], :muscle_id => row[2])
 
 end
+
+CSV.foreach('db/profile.csv') do |row|
+  Profile.create(:user_id => row[1])
+end
