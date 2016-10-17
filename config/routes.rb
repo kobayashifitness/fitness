@@ -1,11 +1,14 @@
 RailsMuscle::Application.routes.draw do
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    # ユーザー登録時にプロフィールも生成するようにカスタマイズしたコントローラーを使用
+    registrations: 'users/registrations'
   }
+  
   root to: 'homes#index'
 
   resources :goals
   resources :muscle_diaries
+
   get '/:date/diary' => 'homes#diary', as: 'diary_home'
   get '/wiki' => 'homes#wiki'
   get '/graph' => 'graphs#index'
