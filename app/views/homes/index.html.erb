@@ -32,7 +32,7 @@ function SetOrderId() {
       <span class="glyphicon glyphicon-king" aria-hidden="true"></span> ランキング
       <% end %>
 
-      <%= link_to "/", { :class => "list-group-item" } do %>
+      <%= link_to "/graph", { :class => "list-group-item" } do %>
       <span class="glyphicon glyphicon-stats" aria-hidden="true"></span> グラフ
       <% end %>
 
@@ -50,11 +50,17 @@ function SetOrderId() {
         <h3 class="panel-title">筋肉日記を見る</h3>
       </div>
       <div class="panel-body">
+        <form name="mainForm">
         <div class="form-group row">
           <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
           <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
         </div>
-        <input type="button" name="link" value="日記へ" onclick="jump()">
+        <div class="form-group row">
+          <div class="col-xs-offset-3 col-xs-9">
+            <input class="btn btn-primary" name="link" type=button value="日記を見る" onclick="jump()">
+          </div>
+        </div>
+      </form>
       </div>
     </div>
   </div>
