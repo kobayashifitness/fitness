@@ -29,7 +29,7 @@ class MuscleDiariesController < ApplicationController
 
     respond_to do |format|
       if @muscle_diary.save
-        format.html { redirect_to '/', notice: 'Muscle diary was successfully created.' }
+        format.html { redirect_to '/', notice: '日記をつけました。ナイスバルク！' }
         format.json { render action: 'show', status: :created, location: @muscle_diary }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class MuscleDiariesController < ApplicationController
   def update
     respond_to do |format|
       if @muscle_diary.update(muscle_diary_params)
-        format.html { redirect_to @muscle_diary, notice: 'Muscle diary was successfully updated.' }
+        format.html { redirect_to @muscle_diary, notice: '日記を更新しました。ナイスカット！' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
