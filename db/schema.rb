@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017082752) do
+ActiveRecord::Schema.define(version: 20161017083429) do
 
   create_table "events", force: true do |t|
     t.string   "event_name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20161017082752) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "weight"
+    t.string   "menu"
   end
 
   create_table "muscle_masses", force: true do |t|
