@@ -10,6 +10,7 @@ class HomesController < ApplicationController
     t = Time.now
     @date = t.strftime("%Y-%m-%d")
 
+    @muscle_diary = MuscleDiary.new
 
   end
 
