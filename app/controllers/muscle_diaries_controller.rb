@@ -70,6 +70,6 @@ class MuscleDiariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def muscle_diary_params
-      params.require(:muscle_diary).permit(:menu, :weight, :num, :set_num, :note)
+      params.require(:muscle_diary).permit(:weight, :num, :set_num, :datetime,:note)
     end
 end
