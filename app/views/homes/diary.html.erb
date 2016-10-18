@@ -1,3 +1,14 @@
 <h1><%= @date%><h1>
 <h2>筋トレ記録</h2>
+<table>
+  <% @diaries.each do |diary| %>
+    <tr>
+      <td><%= diary.weight %></td>
+      <td><%= diary.num %></td>
+      <td><%= diary.set_num %></td>
+      <td><%= diary.date %></td>
+      <td><%= diary.note %></td>
+    </tr>
+  <% end %>
+</table>
 <h2>プロフィール</h2>
