@@ -30,6 +30,7 @@ class HomesController < ApplicationController
     @muscle_mass = MuscleMass.new
     @height = Height.new
     @weight = Weight.new
+    @protein = Protein.new
   end
 
  def diary
