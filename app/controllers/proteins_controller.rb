@@ -25,6 +25,7 @@ class ProteinsController < ApplicationController
   # POST /proteins.json
   def create
     @protein = Protein.new(protein_params)
+    @protein.user_id = current_user.id
 
     respond_to do |format|
       if @protein.save
@@ -69,6 +70,6 @@ class ProteinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def protein_params
-      params[:protein]
+      params.require(:protein).permit(:diary_date, :protein_intake)
     end
 end
