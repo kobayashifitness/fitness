@@ -83,7 +83,7 @@ class MuscleMassesController < ApplicationController
     def height_params
       params.require(:height).permit(:height)
     end
-    def weight_mass_params
+    def weight_params
       params.require(:weight).permit(:weight)
     end
 end
