@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018111525) do
+ActiveRecord::Schema.define(version: 20161018135420) do
 
   create_table "events", force: true do |t|
     t.string   "event_name"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20161018111525) do
 
   create_table "heights", force: true do |t|
     t.float    "height"
-    t.datetime "datetime",   limit: 255
     t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "diary_date"
   end
 
   create_table "muscle_diaries", force: true do |t|
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20161018111525) do
     t.integer  "event_id"
     t.integer  "num"
     t.integer  "set_num"
-    t.datetime "datetime",   limit: 255
     t.string   "note"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -58,9 +57,9 @@ ActiveRecord::Schema.define(version: 20161018111525) do
     t.float    "r_leg"
     t.float    "body"
     t.float    "fat"
-    t.datetime "datetime",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "diary_date"
   end
 
   create_table "muscle_of_events", force: true do |t|
@@ -106,9 +105,9 @@ ActiveRecord::Schema.define(version: 20161018111525) do
   create_table "proteins", force: true do |t|
     t.integer  "user_id"
     t.integer  "protein_intake"
-    t.datetime "datetime",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "diary_date"
   end
 
   create_table "tests", force: true do |t|
@@ -139,10 +138,10 @@ ActiveRecord::Schema.define(version: 20161018111525) do
 
   create_table "weights", force: true do |t|
     t.float    "weight"
-    t.string   "datetime"
     t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "diary_date"
   end
 
 end
