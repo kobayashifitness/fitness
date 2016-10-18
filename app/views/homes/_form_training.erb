@@ -1,4 +1,4 @@
-<div class="item active" style="padding: 15px 10% 80px 10%;">
+<div class="item active" style="padding: 15px 10% 120px 10%;">
   <legend>トレーニング</legend>
 
   <%= form_for(@muscle_diary, html: { class: "form-horizontal", role: "form" }) do |f| %>
@@ -6,7 +6,6 @@
   <div class="alert alert-danger alert-dismissable" role="alert">
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
     <h4><%= pluralize(@muscle_diary.errors.count, "error") %> prohibited this goal from being saved:</h4>
-
     <ul>
       <% @muscle_diary.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -16,42 +15,42 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label "日付", class: "col-xs-4 control-label" %>
-    <div class="col-xs-8">
-      <%= f.datetime_select :diary_date, placeholder: "日付", class: "form-control" %>
+    <%= f.label "日付", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :diary_date, class: "datepicker form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "重量", class: "col-xs-4 control-label" %>
-    <div class="col-xs-8">
+    <%= f.label "重量", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
       <%= f.number_field :weight, placeholder: "負荷の重量 [kg]", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "回数", class: "col-xs-4 control-label" %>
-    <div class="col-xs-8">
+    <%= f.label "回数", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
       <%= f.number_field :num, placeholder: "１セットあたりの回数", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "セット数", class: "col-xs-4 control-label" %>
-    <div class="col-xs-8">
+    <%= f.label "セット数", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
       <%= f.number_field :set_num, placeholder: "セット数", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "メモ", class: "col-xs-4 control-label" %>
-    <div class="col-xs-8">
+    <%= f.label "メモ", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
       <%= f.text_field :note, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="col-xs-offset-4 col-xs-8">
+    <div class="col-sm-offset-2 col-sm-10">
       <%= f.submit "日記をつける", class: "btn btn-primary" %>
     </div>
   </div>
