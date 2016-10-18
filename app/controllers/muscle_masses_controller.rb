@@ -44,7 +44,7 @@ class MuscleMassesController < ApplicationController
 
     respond_to do |format|
       if @muscle_mass.save
-        format.html { redirect_to "/", notice: '日記をつけました。' }
+        format.html { redirect_to "/", notice: 'データを入力しました。' }
         format.json { render action: 'show', status: :created, location: @muscle_mass }
       else
         format.html { render action: 'new' }
@@ -88,9 +88,11 @@ class MuscleMassesController < ApplicationController
     def muscle_mass_params
       params.require(:muscle_mass).permit(:diary_date, :muscle_mass, :l_arm, :r_arm, :l_leg, :r_reg, :body ,:fat)
     end
+
     def height_params
       params.require(:height).permit(:height)
     end
+
     def weight_params
       params.require(:weight).permit(:weight)
     end
