@@ -3,11 +3,12 @@ RailsMuscle::Application.routes.draw do
     # ユーザー登録時にプロフィールも生成するようにカスタマイズしたコントローラーを使用
     registrations: 'users/registrations'
   }
-  
+
   root to: 'homes#index'
 
   resources :goals
   resources :muscle_diaries
+  resources :muscle_masses
 
   get '/:date/diary' => 'homes#diary', as: 'diary_home'
   get '/wiki' => 'homes#wiki'

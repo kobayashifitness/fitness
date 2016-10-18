@@ -11,7 +11,9 @@ class HomesController < ApplicationController
     @date = t.strftime("%Y-%m-%d")
 
     @muscle_diary = MuscleDiary.new
-
+    @muscle_mass = MuscleMass.new
+    @height = Height.new
+    @weight = Weight.new
   end
 
  def diary

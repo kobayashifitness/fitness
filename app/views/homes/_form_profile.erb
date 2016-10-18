@@ -1,28 +1,76 @@
 <div class="item" style="padding: 15px 10% 60px 10%;">
   <legend>プロフィール</legend>
-  <div class="form-group row">
-    <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-    <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
-  </div>
-  <div class="form-group row">
-    <label for="input-height" class="col-xs-3 col-form-label">身長</label>
-    <div class="col-xs-9"><input type="number" name="height" class="form-control input-sm" placeholder="身長 [cm]"></div>
-  </div>
-  <div class="form-group row">
-    <label for="input-weight" class="col-xs-3 col-form-label">体重</label>
-    <div class="col-xs-9"><input type="number" name="weight" class="form-control input-sm" placeholder="体重 [kg]"></div>
-  </div>
-  <div class="form-group row">
-    <label for="input-muscle_mass" class="col-xs-3 col-form-label">筋肉量</label>
-    <div class="col-xs-9"><input type="number" name="muscle_mass" class="form-control input-sm" placeholder="筋肉量 [kg]"></div>
-  </div>
-  <div class="form-group row">
-    <label for="input-fat" class="col-xs-3 col-form-label">体脂肪率</label>
-    <div class="col-xs-9"><input type="number" name="fat" class="form-control input-sm" placeholder="体脂肪率 [%]"></div>
-  </div>
-  <div class="form-group row">
-    <div class="col-xs-offset-3 col-xs-9">
-      <input class="btn btn-primary" name="commit" type="submit" value="データを入力">
+  <%= form_for(@muscle_mass, html: { class: "form-horizontal", role: "form" }) do |f| %>
+
+    <div class="form-group">
+       <%= f.label "日付", class: "col-xs-3 control-label" %>
+       <div class="col-xs-9">
+          <%= f.text_field :datetime, class: " form-control" %>
+       </div>
+
     </div>
-  </div>
+    <div class="form-group">
+      <%= f.label "身長", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= fields_for @height do |h| %>
+          <%= h.number_field :height, placeholder: "身長[cm]", class: "form-control" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label "体重", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= fields_for @weight do |w| %>
+          <%= w.number_field :weight, placeholder: "体重[kg]", class: "form-control" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label "筋肉量", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.number_field :muscle_mass, placeholder: "全体の筋肉量 [kg]", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label "左腕筋肉量", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.number_field :l_arm, placeholder: "左腕の筋肉量 [kg]", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label "右腕筋肉量", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.number_field :r_arm, placeholder: "右腕の筋肉量 [kg]", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label "左足筋肉量", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.number_field :l_leg, placeholder: "左足の筋肉量 [kg]", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label "右足筋肉量", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.number_field :r_leg, placeholder: "右足の筋肉量 [kg]", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label "体幹筋肉量", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.number_field :body, placeholder: "体幹の筋肉量 [kg]", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label "脂肪量", class: "col-xs-3 control-label" %>
+      <div class="col-xs-9">
+        <%= f.number_field :fat, placeholder: "脂肪量 [kg]", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-offset-3 col-xs-9">
+        <%= f.submit "データを入力", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
 </div>
