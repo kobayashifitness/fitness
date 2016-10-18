@@ -9,6 +9,7 @@ RailsMuscle::Application.routes.draw do
   resources :goals
   resources :muscle_diaries
   resources :muscle_masses
+  resources :proteins
 
   get '/:date/diary' => 'homes#diary', as: 'diary_home'
   get '/wiki' => 'homes#wiki'
