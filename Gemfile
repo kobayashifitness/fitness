@@ -50,6 +50,8 @@ gem 'io-console'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootstrap-generators'
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails'
 
 # for draw graph
 gem 'chartkick'
