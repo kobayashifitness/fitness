@@ -27,22 +27,30 @@ class MuscleMassesController < ApplicationController
     @muscle_mass = MuscleMass.new(muscle_mass_params)
     @height = Height.new(height_params)
     @weight = Weight.new(weight_params)
-    if @masclemass.mascle_mass != nil && @masclemass.mascle_mass != nil && @masclemass.l_arm != nil && @masclemass.r_arm != nil && @masclemass.l_leg != nil && @masclemass.r_leg != nil && @masclemass.body != nil && @masclemass.fat != nil
-    @muscle_mass.plofile_id = current_user.profile.id
-    @muscle_mass.save
-    end
+
+    @muscle_mass.profile_id = current_user.profile.id
+
     if @height.height != nil
-    @height.plofile_id = current_user.profile.id
-    @height.datetime =   @muscle_mass.datetime
+    @height.profile_id = current_user.profile.id
+    @height.diary_date = @muscle_mass.diary_date
     @height.save
     end
+
     if @weight.weight != nil
-    @weight.plofile_id = current_user.profile.id
-    @weight.datetime =   @muscle_mass.datetime
+    @weight.profile_id = current_user.profile.id
+    @weight.diary_date =   @muscle_mass.diary_date
     @weight.save
     end
 
-    redirect_to '/'
+    respond_to do |format|
+      if @muscle_mass.save
+        format.html { redirect_to "/", notice: '日記をつけました。' }
+        format.json { render action: 'show', status: :created, location: @muscle_mass }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @muscle_mass.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /muscle_masses/1
@@ -78,7 +86,7 @@ class MuscleMassesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
 
     def muscle_mass_params
-      params.require(:muscle_mass).permit(:muscle_mass, :l_arm, :r_arm, :l_leg, :r_reg, :body ,:fat ,:datetime)
+      params.require(:muscle_mass).permit(:diary_date, :muscle_mass, :l_arm, :r_arm, :l_leg, :r_reg, :body ,:fat)
     end
     def height_params
       params.require(:height).permit(:height)
