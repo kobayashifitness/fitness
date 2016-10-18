@@ -35,7 +35,6 @@ class HomesController < ApplicationController
 
  def diary
    @date = params[:date]
-
-   @diaries = current_user.muscle_diaries.where(datetime: @date ).all
+   @diaries = current_user.muscle_diaries.where(diary_date: @date ).all
  end
 end
