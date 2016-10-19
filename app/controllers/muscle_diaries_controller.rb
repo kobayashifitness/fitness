@@ -1,5 +1,5 @@
 class MuscleDiariesController < ApplicationController
-  #before_action :set_muscle_diary, only: [:show, :edit, :update, :destroy]
+  before_action :set_muscle_diary, only: [:show, :edit, :update, :destroy]
 
   # GET /muscle_diaries
   # GET /muscle_diaries.json
@@ -70,12 +70,8 @@ class MuscleDiariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def muscle_diary_params
-<<<<<<< HEAD
 
       params.require(:muscle_diary).permit(:weight, :num, :set_num, :datetime,:note)
 
-=======
-      params.require(:muscle_diary).permit(:diary_date, :weight, :num, :set_num, :note)
->>>>>>> 1ead720f3efda3475203c1c9734b3eea01ad7e71
     end
 end

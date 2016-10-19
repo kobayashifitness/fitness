@@ -27,6 +27,9 @@ class HomesController < ApplicationController
 
     @goal = Goal.new
     @muscle_diary = MuscleDiary.new
+    # 筋トレの重さの初期値
+    @muscle_diary.weight = 20
+
     @muscle_mass = MuscleMass.new
     @height = Height.new
     @weight = Weight.new

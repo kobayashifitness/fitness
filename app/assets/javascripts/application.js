@@ -14,13 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require form
 //= require_tree .
 //= require bootstrap-sprockets
 //= require Chart.bundle
 //= require chartkick
 //= require moment
 //= require bootstrap-datetimepicker
-
+//= require jquery-ui
 var data = {'data-date-format': 'YYYY-MM-DD hh:mm:ss' };
 $(function(){
   $('.datepicker').attr(data);

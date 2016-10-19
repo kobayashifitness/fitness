@@ -61,3 +61,5 @@ gem 'dateslices'
 gem 'devise'
 gem 'therubyracer'
 gem 'rails-erd', group: [:development, :test]
+
+gem 'jquery-ui-rails'
