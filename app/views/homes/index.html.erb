@@ -28,12 +28,12 @@ function SetOrderId() {
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> ホーム
       <% end %>
 
-      <%= link_to "/", { :class => "list-group-item" } do %>
+      <%= link_to "/ranking", { :class => "list-group-item" } do %>
       <span class="glyphicon glyphicon-king" aria-hidden="true"></span> ランキング
       <% end %>
 
       <%= link_to "/graph", { :class => "list-group-item" } do %>
-      <span class="glyphicon glyphicon-stats" aria-hidden="true"></span> グラフ
+      <span class="glyphicon glyphicon-stats" aria-hidden="true"></span> データ
       <% end %>
 
       <%= link_to "/wiki", { :class => "list-group-item" } do %>
@@ -51,18 +51,30 @@ function SetOrderId() {
       </div>
       <div class="panel-body">
         <form name="mainForm">
-        <div class="form-group row">
-          <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
-          <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
-        </div>
-        <div class="form-group row">
-          <div class="col-xs-offset-3 col-xs-9">
-            <input class="btn btn-primary" name="link" type=button value="日記を見る" onclick="jump()">
+          <div class="form-group row">
+            <label for="input-date"  class="col-xs-3 col-form-label">日付</label>
+            <div class="col-xs-9"><input type = "date" min="2014-01-01" max="2050-12-31" name="diaryday" value ="<%= @date %>" class="form-control input-sm"></div>
           </div>
-        </div>
-      </form>
+          <div class="form-group row">
+            <div class="col-xs-offset-3 col-xs-9">
+              <input class="btn btn-primary" name="link" type=button value="日記を見る" onclick="jump()">
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">筋肉コンディション</h3>
+      </div>
+      <div class="panel-body">
+        <span class="label label-success">上腕二頭筋</span>
+        <span class="label label-warning">胸筋</span>
+        <span class="label label-danger">背筋</span>
+      </div>
+    </div>
+
   </div>
 
 
@@ -73,7 +85,7 @@ function SetOrderId() {
       </div>
       <div class="panel-body">
 
-            <%= render 'form_goal'%>
+        <%= render 'form_goal'%>
 
       </div>
     </div>
@@ -84,7 +96,7 @@ function SetOrderId() {
       </div>
 
       <div id="carousel-data-input" class="carousel slide" data-ride="carousel" data-interval="false" style="min-height: 560px;">
-        <ol class="carousel-indicators" style="bottom: 20px">
+        <ol class="carousel-indicators" style="top: 20px">
           <li data-target="#carousel-data-input" data-slide-to="0" class="">プロフィール</li>
           <li data-target="#carousel-data-input" data-slide-to="1" class="active">トレーニング</li>
           <li data-target="#carousel-data-input" data-slide-to="2" class="">食事管理</li>
@@ -105,19 +117,6 @@ function SetOrderId() {
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
-    </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">筋肉コンディション</h3>
-      </div>
-      <div class="panel-body">
-        <h3>
-          <span class="label label-success">上腕二頭筋</span>
-          <span class="label label-warning">胸筋</span>
-          <span class="label label-danger">背筋</span>
-        </h3>
       </div>
     </div>
 

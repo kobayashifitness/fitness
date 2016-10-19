@@ -30,11 +30,11 @@ class HomesController < ApplicationController
     @muscle_mass = MuscleMass.new
     @height = Height.new
     @weight = Weight.new
+    @protein = Protein.new
   end
 
  def diary
    @date = params[:date]
-
-   @diaries = current_user.muscle_diaries.where(datetime: @date ).all
+   @diaries = current_user.muscle_diaries.where(diary_date: @date ).all
  end
 end

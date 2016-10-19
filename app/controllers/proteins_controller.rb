@@ -25,10 +25,11 @@ class ProteinsController < ApplicationController
   # POST /proteins.json
   def create
     @protein = Protein.new(protein_params)
+    @protein.user_id = current_user.id
 
     respond_to do |format|
       if @protein.save
-        format.html { redirect_to @protein, notice: 'Protein was successfully created.' }
+        format.html { redirect_to "/", notice: '日記をつけました。タンパク質を適切に摂取して筋肉を育てよう！' }
         format.json { render action: 'show', status: :created, location: @protein }
       else
         format.html { render action: 'new' }
@@ -42,7 +43,7 @@ class ProteinsController < ApplicationController
   def update
     respond_to do |format|
       if @protein.update(protein_params)
-        format.html { redirect_to @protein, notice: 'Protein was successfully updated.' }
+        format.html { redirect_to @protein, notice: '日記を更新しました。タンパク質を適切に摂取して筋肉を育てよう！' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +70,6 @@ class ProteinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def protein_params
-      params[:protein]
+      params.require(:protein).permit(:diary_date, :protein_intake)
     end
 end
