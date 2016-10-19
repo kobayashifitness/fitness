@@ -14,7 +14,6 @@ function SetOrderId() {
   if ( Day.length == 1 ) Day = "0" + Day;
   document.forms.mainForm.diaryday.value = Year + "-" + Month + "-" + Day;
 }
-
 </script>
 
 <% if user_signed_in? %>
@@ -96,19 +95,17 @@ function SetOrderId() {
       </div>
 
       <div id="carousel-data-input" class="carousel slide" data-ride="carousel" data-interval="false" style="min-height: 560px;">
-        <ol class="carousel-indicators" style="top: 20px">
+        <div class="carousel-inner" role="listbox">
+          <%= render 'form_profile' %>
+          <%= render 'form_training' %>
+          <%= render 'form_diet' %>
+        </div>
+
+        <ol class="carousel-indicators" style="bottom: 20px">
           <li data-target="#carousel-data-input" data-slide-to="0" class="">プロフィール</li>
           <li data-target="#carousel-data-input" data-slide-to="1" class="active">トレーニング</li>
           <li data-target="#carousel-data-input" data-slide-to="2" class="">食事管理</li>
         </ol>
-
-        <div class="carousel-inner" role="listbox">
-
-          <%= render 'form_profile' %>
-          <%= render 'form_training' %>
-          <%= render 'form_diet' %>
-
-        </div>
 
         <a class="left carousel-control" href="#carousel-data-input" role="button" data-slide="prev" style="width: 8%">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
