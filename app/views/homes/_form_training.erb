@@ -24,12 +24,26 @@
   <div class="form-group">
     <div class="slider_field">
       <%= f.label :weight,"重量", class: "col-sm-2 control-label" %>
+      <%= f.hidden_field :weight %>
       <div class="col-sm-10">
-        <%= f.range_field :weight, in: 0.0..300.0, step: 0.5, class: "form-control" %>
-
+          <span id="weight_value"><%= @muscle_diary.weight %> kg</span>
+          <div id="slider"></div>
       </div>
     </div>
   </div>
+  <script>
+      $('#slider').slider({
+      value: <%= @muscle_diary.weight %>,
+      min: 0,
+      max: 100,
+      step: 10,
+      animate: 'fast',
+      slide: function(event, ui){
+        $('#weiight_value').html(ui.value);
+        $('#muscle_diary_weight').val(ui.value);
+      }
+    });
+  </script>
 
   <div class="form-group">
     <%= f.label "回数", class: "col-sm-2 control-label" %>
