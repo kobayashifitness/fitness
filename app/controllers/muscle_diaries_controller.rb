@@ -1,5 +1,5 @@
 class MuscleDiariesController < ApplicationController
-  before_action :set_muscle_diary, only: [:show, :edit, :update, :destroy]
+  #before_action :set_muscle_diary, only: [:show, :edit, :update, :destroy]
 
   # GET /muscle_diaries
   # GET /muscle_diaries.json
