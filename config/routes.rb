@@ -1,4 +1,6 @@
 RailsMuscle::Application.routes.draw do
+  get 'ranking/index'
+
   devise_for :users, controllers: {
     # ユーザー登録時にプロフィールも生成するようにカスタマイズしたコントローラーを使用
     registrations: 'users/registrations'
