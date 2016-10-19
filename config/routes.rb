@@ -16,6 +16,7 @@ RailsMuscle::Application.routes.draw do
   get '/:date/diary' => 'homes#diary', as: 'diary_home'
   get '/wiki' => 'homes#wiki'
   get '/graph' => 'graphs#index'
+  get '/ranking' => 'ranking#index'
   get "profiles/new"
 
   # The priority is based upon order of creation: first created -> highest priority.
