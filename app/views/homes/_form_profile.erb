@@ -20,7 +20,7 @@
     <%= f.label "体重", class: "col-sm-2 control-label" %>
     <div class="col-sm-4">
       <%= fields_for @weight do |w| %>
-      <%= w.number_field :weight, placeholder: "体重 [kg]", class: "form-control" %>
+      <%= w.number_field :weight, step: 0.1, placeholder: "体重 [kg]", class: "form-control" %>
       <% end %>
     </div>
   </div>
