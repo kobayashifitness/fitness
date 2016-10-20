@@ -4,7 +4,65 @@
   </div>
   <div class="panel-body">
     <legend>フルスクワット　重量ランキング　バーベルの部</legend>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>ランク</th>
+            <th>ユーザー名</th>
+            <th>重量 [kg]</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%= content_tag_for(:tr, @muscle_diaries.where(event_id: 65).order("weight DESC").group("user_id") ) do |ranker| %>
+          <td><%=  %></td>
+          <td><%= ranker.user_id %></td>
+          <td><%= ranker.weight %></td>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
     <legend>ベンチプレス　重量ランキング　バーベルの部</legend>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>ランク</th>
+            <th>ユーザー名</th>
+            <th>重量 [kg]</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- 降順にソートした後user_idユニークにすることでランキング結果を出した -->
+          <%= content_tag_for(:tr, @muscle_diaries.where(event_id: 1).order("weight DESC").group("user_id") ) do |ranker| %>
+          <td><%=  %></td>
+          <td><%= ranker.user_id %></td>
+          <td><%= ranker.weight %></td>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
     <legend>デッドリフト　重量ランキング　バーベルの部</legend>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>ランク</th>
+            <th>ユーザー名</th>
+            <th>重量 [kg]</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%= content_tag_for(:tr, @muscle_diaries.where(event_id: 15).order("weight DESC").group("user_id") ) do |ranker| %>
+          <td><%=  %></td>
+          <td><%= ranker.user_id %></td>
+          <td><%= ranker.weight %></td>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
