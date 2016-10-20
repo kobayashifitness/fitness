@@ -22,38 +22,6 @@
   </div>
 
   <div class="form-group">
-    <table class="table table-inverse">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>胸</th>
-          <th>背中</th>
-          <th>足</th>
-          <th>肩</th>
-          <th>上腕二頭筋</th>
-          <th>上腕三頭筋</th>
-          <th>腹筋</th>
-          <th>ふくらはぎ</th>
-          <th>前腕部</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">メニュー</th>
-          <td><%= f.collection_radio_buttons :event_id,  Event.joins(:muscles).where("muscles.part = ?",'胸'), :id, :event_name  do |b| %> <%= b.label {b.radio_button + b.text} %><% end %>></td>
-          <td><%= f.collection_radio_buttons :event_id,  Event.joins(:muscles).where("muscles.part = ?",'背中'), :id, :event_name  do |b| %> <%= b.label {b.radio_button + b.text} %><% end %>></td>
-          <td><%= f.collection_radio_buttons :event_id,  Event.joins(:muscles).where("muscles.part = ?",'足'), :id, :event_name  do |b| %> <%= b.label {b.radio_button + b.text} %><% end %>></td>
-          <td><%= f.collection_radio_buttons :event_id,  Event.joins(:muscles).where("muscles.part = ?",'胸'), :id, :event_name  do |b| %> <%= b.label {b.radio_button + b.text} %><% end %>></td>
-          <td><%= f.collection_radio_buttons :event_id,  Event.joins(:muscles).where("muscles.part = ?",'背中'), :id, :event_name  do |b| %> <%= b.label {b.radio_button + b.text} %><% end %>></td>
-          <td><%= f.collection_radio_buttons :event_id,  Event.joins(:muscles).where("muscles.part = ?",'足'), :id, :event_name  do |b| %> <%= b.label {b.radio_button + b.text} %><% end %>></td>
-        </tr>
-
-
-      </tbody>
-    </table>
-  </div>
-
-  <div class="form-group">
     <div class="slider_field">
       <%= f.label "重量", class: "col-sm-2 control-label" %>
       <%= f.hidden_field :weight %>
