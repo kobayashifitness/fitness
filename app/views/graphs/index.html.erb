@@ -4,6 +4,10 @@
   </div>
   <div class="panel-body">
     <legend>体重の傾向</legend>
+    <% if !@weights.empty? %>
     <%= line_chart( @graph, min: @min_weight-1, max: @max_weight+1 ) %>
+    <% else %>
+    体重データがありません。体重を測って記録しましょう！
+    <% end %>
   </div>
 </div>
