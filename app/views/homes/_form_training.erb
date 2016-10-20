@@ -48,12 +48,11 @@
 
   <div class="form-group">
     <%= f.label "回数", class: "col-sm-2 control-label" %>
-    <div class="col-sm-2">
+    <div class="col-sm-4">
       <%= f.select :num, (0..20), {}, class: "form-control" %>
     </div>
-
     <%= f.label "セット数", class: "col-sm-2 control-label" %>
-    <div class="col-sm-2">
+    <div class="col-sm-4">
       <%= f.select :set_num, (0..10), {}, class: "form-control" %>
     </div>
   </div>
