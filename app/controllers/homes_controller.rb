@@ -38,4 +38,10 @@ class HomesController < ApplicationController
    @date = params[:date]
    @diaries = current_user.muscle_diaries.where(diary_date: @date ).all
  end
+
+ def wiki
+   @events = Event.all
+   @muscles = Muscle.all
+ end
+
 end

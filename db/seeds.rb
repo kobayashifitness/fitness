@@ -26,3 +26,7 @@ end
 CSV.foreach('db/profile.csv') do |row|
   Profile.create(:user_id => row[1])
 end
+
+CSV.foreach('db/weight.csv') do |row|
+  Weight.create(:profile_id => row[1], :weight => row[2], :diary_date => row[3])
+end

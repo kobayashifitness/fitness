@@ -1,4 +1,6 @@
 RailsMuscle::Application.routes.draw do
+  resources :samples
+
   get 'ranking/index'
 
   devise_for :users, controllers: {
@@ -12,6 +14,7 @@ RailsMuscle::Application.routes.draw do
   resources :muscle_diaries
   resources :muscle_masses
   resources :proteins
+  resources :samples
 
   get '/:date/diary' => 'homes#diary', as: 'diary_home'
   get '/wiki' => 'homes#wiki'
