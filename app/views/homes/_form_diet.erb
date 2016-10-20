@@ -17,16 +17,35 @@
   <div class="form-group">
     <%= f.label "日付", class: "col-sm-2 control-label" %>
     <div class="col-sm-10 form-inline">
-      <%= f.date_select :diary_date, {}, class: "form-control" %>
+      <%= f.date_select :diary_date, {},value: DateTime.now, class: "form-control" %>
     </div>
   </div>
-
   <div class="form-group">
-    <%= f.label "タンパク質", class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.text_field :protein_intake, placeholder: "摂取したタンパク質 [g]", class: "form-control" %>
+    <div class="slider_field">
+      <%= f.label "タンパク質量", class: "col-sm-2 control-label" %>
+
+      <div class="col-sm-7">
+        <div id="slider_protein"></div>
+      </div>
+      <div class ="col-sm-3 ">
+            <%= f.text_field :protein_intake, placeholder: "摂取したタンパク質 [g]", value: @protein.protein_intake = 0 ,class: "form-control" %>
+      </div>
     </div>
   </div>
+  <script>
+  $('#slider_protein').slider({
+    value:  <%= @protein.protein_intake %>,
+    min: 0,
+    max: 50,
+    step: 1,
+    animate: 'slow',
+    slide: function(event, ui){
+      $('#protein_protein_intake').val(ui.value);
+    }
+  });
+  </script>
+
+
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">

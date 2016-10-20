@@ -24,15 +24,82 @@ class HomesController < ApplicationController
 
     t = Time.now
     @date = t.strftime("%Y-%m-%d")
-
+    # 目標
     @goal = Goal.new
+    # トレーニング
     @muscle_diary = MuscleDiary.new
     @muscle_diary.weight =0
     @event= Event.new
+    # プロフィール
     @muscle_mass = MuscleMass.new
     @height = Height.new
     @weight = Weight.new
     @protein = Protein.new
+    #筋肉コンディション
+
+    @mune = current_user.muscle_diaries.joins({:event => :muscles}).where(:muscles => {:part => '胸'}).last
+    @senaka = current_user.muscle_diaries.joins({:event => :muscles}).where(:muscles => {:part => '背中'}).last
+    @kata = current_user.muscle_diaries.joins({:event => :muscles}).where(:muscles => {:part => '肩'}).last
+    @nitou = current_user.muscle_diaries.joins({:event => :muscles}).where(:muscles => {:part => '上腕二頭筋'}).last
+    @santou = current_user.muscle_diaries.joins({:event => :muscles}).where(:muscles => {:part => '上腕三頭筋'}).last
+    @ab = current_user.muscle_diaries.joins({:event => :muscles}).where(:muscles => {:part => '腹筋'}).last
+    @asi = current_user.muscle_diaries.joins({:event => :muscles}).where(:muscles => {:part => '足'}).last
+    @hukurahagi = current_user.muscle_diaries.joins({:event => :muscles}).where(:muscles => {:part => 'ふくらはぎ'}).last
+    @zenwan = current_user.muscle_diaries.joins({:event => :muscles}).where(:muscles => {:part => '前腕部'}).last
+    if(@mune != nil)
+      @mune = @mune.diary_date
+    else
+      @mune = DateTime.now - 10.days
+    end
+
+    if(@senaka != nil)
+      @senaka = @senaka.diary_date
+    else
+      @senaka = DateTime.now - 10.days
+    end
+
+    if(@kata != nil)
+      @kata = @kata.diary_date
+    else
+      @kata = DateTime.now - 10.days
+    end
+
+    if(@nitou != nil)
+      @nitou = @nitou.diary_date
+
+    else
+      @nitou = DateTime.now - 10.days
+    end
+
+    if(@santou != nil)
+      @santou = @santou.diary_date
+    else
+      @santou = DateTime.now - 10.days
+    end
+
+    if(@ab != nil)
+      @ab = @ab.diary_date
+    else
+      @ab = DateTime.now - 10.days
+    end
+
+    if(@asi != nil)
+      @asi = @asi.diary_date
+    else
+      @asi = DateTime.now - 10.days
+    end
+
+    if(@hukurahagi != nil)
+      @hukurahagi = @hukurahagi.diary_date 
+    else
+      @hukurahagi = DateTime.now - 10.days
+    end
+
+    if(@zenwan != nil)
+      @zenwan = @zenwan.diary_date
+    else
+      @zenwan = DateTime.now - 10.days
+    end
 
     @event_suggestions = Event.autocomplete(params[:term]).pluck(:event_name)
      respond_to do |format|
