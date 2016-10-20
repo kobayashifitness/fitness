@@ -24,8 +24,17 @@ class MuscleDiariesController < ApplicationController
   # POST /muscle_diaries
   # POST /muscle_diaries.json
   def create
+
+    @event = Event.new(event_params)
     @muscle_diary = MuscleDiary.new(muscle_diary_params)
     @muscle_diary.user_id = current_user.id
+    #もし入力メニューが既存なら
+    if Event.find_by(event_name: @event.event_name) != nil
+      @muscle_diary.event_id =  Event.find_by(event_name: @event.event_name).id
+    else
+      @muscle_diary.event_id =  @event.id
+      @event.save
+    end
 
     respond_to do |format|
       if @muscle_diary.save
@@ -36,6 +45,8 @@ class MuscleDiariesController < ApplicationController
         format.json { render json: @muscle_diary.errors, status: :unprocessable_entity }
       end
     end
+
+
   end
 
   # PATCH/PUT /muscle_diaries/1
@@ -72,6 +83,11 @@ class MuscleDiariesController < ApplicationController
     def muscle_diary_params
 
       params.require(:muscle_diary).permit(:weight, :num, :set_num, :datetime,:note)
+
+    end
+    def event_params
+
+      params.require(:event).permit(:event_name)
 
     end
 end
