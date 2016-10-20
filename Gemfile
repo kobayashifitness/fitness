@@ -61,5 +61,6 @@ gem 'dateslices'
 gem 'devise'
 gem 'therubyracer'
 gem 'rails-erd', group: [:development, :test]
-
+# for form_muscle_diary
 gem 'jquery-ui-rails'
+gem 'rails4-autocomplete'

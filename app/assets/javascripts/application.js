@@ -23,6 +23,9 @@
 //= require bootstrap-datetimepicker
 //= require jquery-ui
 //= require enter
+//= require autocomplete-rails
+//= require jquery-ui/autocomplete
+//= require autocomplete_event_name 
 var data = {'data-date-format': 'YYYY-MM-DD hh:mm:ss' };
 $(function(){
   $('.datepicker').attr(data);
