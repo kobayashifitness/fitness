@@ -27,6 +27,7 @@ class HomesController < ApplicationController
 
     @goal = Goal.new
     @muscle_diary = MuscleDiary.new
+    @muscle_diary.weight =0
 
     @muscle_mass = MuscleMass.new
     @height = Height.new
