@@ -3,6 +3,7 @@
     <h3 class="panel-title">ランキング</h3>
   </div>
   <div class="panel-body">
+    <%= collection_select :event_id, :event_id, Event.all.order("event_name"), :id, :event_name, {}, class: "form-control" %>
     <legend>フルスクワット　重量ランキング　バーベルの部</legend>
     <div class="table-responsive">
       <table class="table table-striped table-bordered table-hover">
