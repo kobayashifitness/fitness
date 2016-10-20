@@ -9,17 +9,17 @@ class HomesController < ApplicationController
     if @year_goal == nil
       @year_goal = Goal.new
       @year_goal.user_id = current_user.id
-      @year_goal.goal = "今年の目標を設定してください"
+      @year_goal.goal = "今年の目標を設定しましょう"
     end
     if @month_goal == nil
       @month_goal = Goal.new
       @month_goal.user_id = current_user.id
-      @month_goal.goal = "今月の目標を設定してください"
+      @month_goal.goal = "今月の目標を設定しましょう"
     end
     if @week_goal == nil
       @week_goal = Goal.new
       @week_goal.user_id = current_user.id
-      @week_goal.goal = "今年の目標を設定してください"
+      @week_goal.goal = "今週の目標を設定しましょう"
     end
 
     t = Time.now
