@@ -28,12 +28,21 @@ class HomesController < ApplicationController
     @goal = Goal.new
     @muscle_diary = MuscleDiary.new
     @muscle_diary.weight =0
-
+    @event= Event.new
     @muscle_mass = MuscleMass.new
     @height = Height.new
     @weight = Weight.new
     @protein = Protein.new
+
+    @event_suggestions = Event.autocomplete(params[:term]).pluck(:event_name)
+     respond_to do |format|
+       format.html
+       format.json {
+         render json: @event_suggestions
+       }
+     end
   end
+
 
  def diary
    @date = params[:date]

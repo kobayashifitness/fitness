@@ -20,15 +20,22 @@
       <%= f.date_select :diary_date, {}, class: "form-control" %>
     </div>
   </div>
-
+  <div class="form-group">
+    <%= f.label "メニュー", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= fields_for @event do |event| %>
+      <%= event.text_field :event_name, id: "event_name_field",class: "form-control" %>
+      <% end %>
+    </div>
+  </div>
   <div class="form-group">
     <div class="slider_field">
       <%= f.label "重量", class: "col-sm-2 control-label" %>
 
-      <div class="col-sm-8">
+      <div class="col-sm-7">
         <div id="slider"></div>
       </div>
-      <div class ="col-sm-2 ">
+      <div class ="col-sm-3 ">
         <%= f.text_field :weight ,:value  => @muscle_diary.weight, class: "form-control" %>
       </div>
     </div>
