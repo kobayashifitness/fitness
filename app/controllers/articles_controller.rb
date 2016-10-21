@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 
   def show
     respond_with(@article)
+
   end
 
   def new
