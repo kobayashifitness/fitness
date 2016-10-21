@@ -27,23 +27,51 @@ class MuscleMassesController < ApplicationController
     @muscle_mass = MuscleMass.new(muscle_mass_params)
     @height = Height.new(height_params)
     @weight = Weight.new(weight_params)
+    @flag = 0
+    @input_datetime = InputDatetime.new(input_datetime_params)
 
-    @muscle_mass.profile_id = current_user.profile.id
+      str = @input_datetime.datetime.to_s
+      if str != (Time.zone.now.strftime("%Y-%m-%d").to_s + " 00:00")
+        @year = str[6,4]
+        @month = str[0,2]
+        @day = str[3,2]
+        @time = str[10,6]
+        @reformat =  (@year + "-" + @month + "-" + @day + @time).to_datetime
+      else
+        @reformat = str.to_datetime
+      end
+      if str != nil
 
-    if @height.height != nil
-    @height.profile_id = current_user.profile.id
-    @height.diary_date = @muscle_mass.diary_date
-    @height.save
-    end
+            if @muscle_mass.muscle_mass == nil
+            elsif @muscle_mass.l_leg == nil
+            elsif @muscle_mass.r_leg == nil
+            elsif @muscle_mass.l_arm == nil
+            elsif @muscle_mass.r_arm == nil
+            elsif @muscle_mass.body == nil
+            elsif @muscle_mass.fat == nil
+            @muscle_mass.profile_id = current_user.profile.id
+            @muscle_mass.diary_date = @reformat
+            @muscle_mass.save
+            @flag =1
+            end
+            if @height.height != nil
+            @height.profile_id = current_user.profile.id
+            @height.diary_date =  @reformat
+            @height.save
+            @flag =1
+            end
 
-    if @weight.weight != nil
-    @weight.profile_id = current_user.profile.id
-    @weight.diary_date =   @muscle_mass.diary_date
-    @weight.save
-    end
+            if @weight.weight != nil
+            @weight.profile_id = current_user.profile.id
+            @weight.diary_date =  @reformat
+            @weight.save
+            @flag =1
+            end
+
+      end
 
     respond_to do |format|
-      if @muscle_mass.save
+      if @flag == 1
         format.html { redirect_to "/", notice: 'データを入力しました。' }
         format.json { render action: 'show', status: :created, location: @muscle_mass }
       else
@@ -86,7 +114,7 @@ class MuscleMassesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
 
     def muscle_mass_params
-      params.require(:muscle_mass).permit(:diary_date, :muscle_mass, :l_arm, :r_arm, :l_leg, :r_reg, :body ,:fat)
+      params.require(:muscle_mass).permit( :muscle_mass, :l_arm, :r_arm, :l_leg, :r_reg, :body ,:fat)
     end
 
     def height_params
@@ -95,5 +123,8 @@ class MuscleMassesController < ApplicationController
 
     def weight_params
       params.require(:weight).permit(:weight)
+    end
+    def input_datetime_params
+      params.require(:input_datetime).permit(:datetime)
     end
 end

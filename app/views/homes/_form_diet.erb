@@ -17,7 +17,7 @@
   <div class="form-group">
     <%= f.label "日付", class: "col-sm-2 control-label" %>
     <div>
-      <%= fields_for @input_datetime do |input_datetime| %>
+      <%= fields_for @input_datetime_protein do |input_datetime| %>
       <div class="col-sm-10">
         <%= input_datetime.text_field :datetime,  :value =>  @first_input_datetime,class: 'form-control datetimepicker' %>
       </div>

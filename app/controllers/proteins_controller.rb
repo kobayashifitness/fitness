@@ -27,17 +27,22 @@ class ProteinsController < ApplicationController
     @protein = Protein.new(protein_params)
     @protein.user_id = current_user.id
 
-    @input_datetime = InputDatetime.new(input_datetime_params)
+    @input_datetime = InputDatetime.new(input_datetime_protein_params)
 
       str = @input_datetime.datetime.to_s
 
-      @year = str[6,4]
-      @month = str[0,2]
-      @day = str[3,2]
-      @time = str[10,6]
-    if @year != nil
-      @protein.diary_date = (@year + "-" + @month + "-" + @day + @time).to_datetime
-    end
+      str = @input_datetime.datetime.to_s
+      if str != (Time.zone.now.strftime("%Y-%m-%d").to_s + " 00:00")
+        @year = str[6,4]
+        @month = str[0,2]
+        @day = str[3,2]
+        @time = str[10,6]
+        @reformat =  (@year + "-" + @month + "-" + @day + @time).to_datetime
+      else
+        @reformat = str.to_datetime
+      end
+
+        @protein.diary_date = @reformat
     respond_to do |format|
       if @protein.save
         format.html { redirect_to "/", notice: "タンパク質を記録しました"}
@@ -83,7 +88,7 @@ class ProteinsController < ApplicationController
     def protein_params
       params.require(:protein).permit(:protein_intake)
     end
-    def input_datetime_params
-      params.require(:input_datetime).permit(:datetime)
+    def input_datetime_protein_params
+      params.require(:input_datetime_protein).permit(:datetime)
     end
 end
