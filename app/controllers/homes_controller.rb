@@ -90,7 +90,7 @@ class HomesController < ApplicationController
     end
 
     if(@hukurahagi != nil)
-      @hukurahagi = @hukurahagi.diary_date 
+      @hukurahagi = @hukurahagi.diary_date
     else
       @hukurahagi = DateTime.now - 10.days
     end
@@ -114,6 +114,10 @@ class HomesController < ApplicationController
  def diary
    @date = params[:date]
    @diaries = current_user.muscle_diaries.where(diary_date: @date ).all
+ end
+
+ def diary_all
+   @all_diary = current_user.muscle_diaries.all
  end
 
  def wiki
