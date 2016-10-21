@@ -1,4 +1,6 @@
 RailsMuscle::Application.routes.draw do
+  resources :articles
+
   resources :samples
 
   get 'ranking/index'
@@ -15,6 +17,7 @@ RailsMuscle::Application.routes.draw do
   resources :muscle_masses
   resources :proteins
   resources :samples
+  resources :articles
 
   get '/:date/diary' => 'homes#diary', as: 'diary_home'
   get '/diary_all' => 'homes#diary_all'

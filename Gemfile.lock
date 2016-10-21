@@ -41,6 +41,7 @@ GEM
     builder (3.2.2)
     chartkick (2.1.1)
     choice (0.2.0)
+    coderay (1.1.1)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -110,6 +111,7 @@ GEM
     rake (11.3.0)
     rdoc (4.2.2)
       json (~> 1.4)
+    redcarpet (2.3.0)
     ref (2.0.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
@@ -161,6 +163,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap3-datetimepicker-rails
   chartkick
+  coderay
   coffee-rails (~> 4.0.0)
   dateslices
   devise
@@ -172,6 +175,7 @@ DEPENDENCIES
   rails (= 4.1)
   rails-erd
   rails4-autocomplete
+  redcarpet (~> 2.3.0)
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3
