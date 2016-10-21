@@ -5,7 +5,17 @@
   <div class="panel-body">
     <legend>体重の傾向</legend>
     <% if !@weights.empty? %>
-    <%= line_chart( @graph, min: @min_weight-1, max: @max_weight+1 ) %>
+    <%= line_chart( @graph_weights, min: @min_weight-1, max: @max_weight+1 ) %>
+    <% else %>
+    体重データがありません。体重を測って記録しましょう！
+    <% end %>
+
+    <legend>筋肉量と体脂肪の傾向</legend>
+    <% if !@muscle_masses.empty? %>
+    <%= line_chart [
+      { name: "筋肉量", data: @graph_muscle_masses },
+      { name: "体脂肪", data: @graph_fats }
+      ] %>
     <% else %>
     体重データがありません。体重を測って記録しましょう！
     <% end %>
