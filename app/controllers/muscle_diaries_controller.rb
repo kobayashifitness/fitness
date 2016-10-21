@@ -33,15 +33,23 @@ class MuscleDiariesController < ApplicationController
     
     client = Twitter::REST::Client.new do |config|
       # developer
-      config.consumer_key         = Rails.application.secrets.twitter_consumer_key
-      config.consumer_secret      = Rails.application.secrets.twitter_consumer_secret
+
+      config.consumer_key         = "p1kXruMcvR9qzaANAphm3sgav"
+      config.consumer_secret      = "rLLYwiOdTqq7HJNoSQLiqhMEQ55IKGriax9mlYKIj3AKGKgXCl"
+
+      #config.consumer_key         = Rails.application.secrets.twitter_consumer_key
+      #config.consumer_secret      = Rails.application.secrets.twitter_consumer_secret
+      
       # user
-      config.access_token         = auth.credentials.token
-      config.access_token_secret  = auth.credentials.secret
+      config.access_token         = "hogehoge" 
+      config.access_token_secret  = "hogehoge"
+
+      #config.access_token         = auth.credentials.token
+      #config.access_token_secret  = auth.credentials.secret
     end
     
     # Twitter投稿
-    client.update("投稿の内容をここに記述")
+    client.update("test")
 
     respond_to do |format|
       if @muscle_diary.save
