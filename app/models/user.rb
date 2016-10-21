@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   has_one :mymenu
   has_many :goals
   has_many :muscle_diaries
+  has_many :proteins
 end

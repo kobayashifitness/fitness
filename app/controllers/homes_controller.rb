@@ -116,6 +116,7 @@ class HomesController < ApplicationController
    #endは未満らしいので１日増やすとその日のデータがとれる
    @end = @date + 1.day
    @diaries = current_user.muscle_diaries.where(diary_date: @date...@end ).all
+   @proteins = current_user.proteins.where(diary_date: @date...@end ).all
    @heights = current_user.profile.heights.where(diary_date: @date...@end ).all
    @weights = current_user.profile.weights.where(diary_date: @date...@end ).all
    @muscle_masses = current_user.profile.muscle_masses.where(diary_date: @date...@end ).all
