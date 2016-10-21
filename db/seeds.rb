@@ -30,3 +30,7 @@ end
 CSV.foreach('db/ranking_test.csv') do |row|
   MuscleDiary.create(:user_id => row[1], :event_id => row[2], :weight => row[3], :num => row[4], :set_num => row[5], :diary_date => row[6])
 end
+
+CSV.foreach('db/muscle_mass.csv') do |row|
+  MuscleMass.create(:profile_id => row[1], :muscle_mass => row[2], :fat => row[3], :diary_date => row[4])
+end
