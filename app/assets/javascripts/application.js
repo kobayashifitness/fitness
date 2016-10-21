@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require bootstrap
 //= require form
@@ -29,19 +30,4 @@
 //= require bootstrap-timepicker
 //= require jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon
 //= require jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-fr
-
-var data = {'data-date-format': 'YYYY-MM-DD hh:mm:ss' };
-$(function(){
-  $('.timepicker').timepicker();
-  $('.datepicker').datetimepicker({
-    format : "YYYY/MM/DD",
-    icons: {
-      previous: "fa fa-arrow-left",
-      next: "fa fa-arrow-right"
-    }
-  });
-  $('.datetimepicker').attr(data);
-  $('.datetimepicker').datetimepicker({
-
-  });
-});
+$(document).on('turbolinks:load',function(){  $('.datetimepicker').datetimepicker()});

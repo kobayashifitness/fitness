@@ -71,3 +71,4 @@ gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 
 gem 'bower-rails', "~> 0.11.0"
+gem 'jquery-turbolinks'
