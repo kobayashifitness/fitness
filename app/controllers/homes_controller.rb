@@ -22,10 +22,12 @@ class HomesController < ApplicationController
       @week_goal.goal = "今週の目標を設定しましょう"
     end
 
-    t = Time.now
+    t = Time.zone.now
     @date = t.strftime("%Y-%m-%d")
     @first_input_datetime =(@date.to_s + " 00:00")
     @input_datetime = InputDatetime.new()
+    @input_datetime_diary = InputDatetimeDiary.new()
+    @input_datetime_protein = InputDatetimeProtein.new()
     # 目標
     @goal = Goal.new
     # トレーニング

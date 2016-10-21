@@ -28,6 +28,21 @@ class MuscleDiariesController < ApplicationController
     @event = Event.new(event_params)
     @muscle_diary = MuscleDiary.new(muscle_diary_params)
     @muscle_diary.user_id = current_user.id
+
+    @input_datetime = InputDatetimeDiary.new(input_datetime_diary_params)
+
+      str = @input_datetime.datetime.to_s
+      if str != (Time.zone.now.strftime("%Y-%m-%d").to_s + " 00:00")
+        @year = str[6,4]
+        @month = str[0,2]
+        @day = str[3,2]
+        @time = str[10,6]
+        @reformat =  (@year + "-" + @month + "-" + @day + @time).to_datetime
+      else
+        @reformat = str.to_datetime
+      end
+
+      @muscle_diary.diary_date = @reformat
     #もし入力メニューが既存なら
     if Event.find_by(event_name: @event.event_name) != nil
       @muscle_diary.event_id =  Event.find_by(event_name: @event.event_name).id
@@ -82,12 +97,15 @@ class MuscleDiariesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def muscle_diary_params
 
-      params.require(:muscle_diary).permit(:weight, :num, :set_num, :diary_date,:note)
+      params.require(:muscle_diary).permit(:weight, :num, :set_num ,:note)
 
     end
     def event_params
 
       params.require(:event).permit(:event_name)
 
+    end
+    def input_datetime_diary_params
+      params.require(:input_datetime_diary).permit(:datetime)
     end
 end
