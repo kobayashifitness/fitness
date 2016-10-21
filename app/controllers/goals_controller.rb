@@ -28,7 +28,7 @@ class GoalsController < ApplicationController
     @goal.user_id = current_user.id
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to "/" }
+        format.html { redirect_to "/", notice: '目標を更新しました。達成に向けてがんばりましょう！' }
         format.json { render action: 'show', status: :created, location: @goal }
       else
         format.html { render action: 'new' }
