@@ -112,14 +112,19 @@ class HomesController < ApplicationController
 
 
  def diary
-   @date = params[:date]
-   @diaries = current_user.muscle_diaries.where(diary_date: @date ).all
+   @date = DateTime.parse(params[:date])
+   #endは未満らしいので１日増やすとその日のデータがとれる
+   @end = @date + 1.day
+   @diaries = current_user.muscle_diaries.where(diary_date: @date...@end ).all
  end
 
  def diary_all
    @all_diary = current_user.muscle_diaries.all
  end
 
+ def profile_all
+   @profile = current_user.profile
+ end
  def wiki
    @events = Event.all
    @muscles = Muscle.all
