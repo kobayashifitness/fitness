@@ -53,6 +53,7 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-generators'
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
+gem 'bootstrap-timepicker-rails'
 
 # for draw graph
 gem 'chartkick'
@@ -68,3 +69,5 @@ gem 'rails4-autocomplete'
 #for_edit_知識
 gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
+
+gem 'bower-rails', "~> 0.11.0"

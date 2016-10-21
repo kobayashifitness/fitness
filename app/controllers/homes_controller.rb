@@ -24,6 +24,8 @@ class HomesController < ApplicationController
 
     t = Time.now
     @date = t.strftime("%Y-%m-%d")
+    @first_input_datetime =(@date.to_s + " 00:00")
+    @input_datetime = InputDatetime.new()
     # 目標
     @goal = Goal.new
     # トレーニング

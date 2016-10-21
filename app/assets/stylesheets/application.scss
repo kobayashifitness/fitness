@@ -13,7 +13,9 @@
  *= require bootstrap-datetimepicker
  *= require jquery-ui
  *= require jquery-ui/autocomplete
+ *= require bootstrap-timepicker
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.css";

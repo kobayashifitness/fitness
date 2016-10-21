@@ -25,9 +25,23 @@
 //= require enter
 //= require autocomplete-rails
 //= require jquery-ui/autocomplete
-//= require autocomplete_event_name 
+//= require autocomplete_event_name
+//= require bootstrap-timepicker
+//= require jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon
+//= require jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-fr
+
 var data = {'data-date-format': 'YYYY-MM-DD hh:mm:ss' };
 $(function(){
-  $('.datepicker').attr(data);
-  $('.datepicker').datetimepicker();
+  $('.timepicker').timepicker();
+  $('.datepicker').datetimepicker({
+    format : "YYYY/MM/DD",
+    icons: {
+      previous: "fa fa-arrow-left",
+      next: "fa fa-arrow-right"
+    }
+  });
+  $('.datetimepicker').attr(data);
+  $('.datetimepicker').datetimepicker({
+
+  });
 });
