@@ -1,5 +1,5 @@
-<div style="margin: 0px 0px 10px 0px">
-  <legend style="margin: 0px 0px 5px 0px">回復目安：3日</legend>
+<legend style="margin: 0px 0px 5px 0px">回復目安：3日</legend>
+<h3>
   <% if @mune + 3.days > DateTime.now %>
   <span class="label label-danger">胸</span>
   <% elsif @mune + 7.days > DateTime.now %>
@@ -23,10 +23,10 @@
   <% else%>
   <span class="label label-warning">足</span>
   <% end %>
-</div>
+</h3>
 
-<div style="margin: 0px 0px 10px 0px">
-  <legend style="margin: 0px 0px 5px 0px">回復目安：2日</legend>
+<legend style="margin: 0px 0px 5px 0px">回復目安：2日</legend>
+<h3>
   <% if @kata + 2.days > DateTime.now %>
   <span class="label label-danger">肩</span>
   <% elsif @kata + 7.days > DateTime.now %>
@@ -58,11 +58,10 @@
   <% else%>
   <span class="label label-warning">ふくらはぎ</span>
   <% end %>
+</h3>
 
-</div>
-
-<div style="margin: 0px 0px 10px 0px">
-  <legend style="margin: 0px 0px 5px 0px">回復目安：1日</legend>
+<legend style="margin: 0px 0px 5px 0px">回復目安：1日</legend>
+<h3>
   <% if @ab + 1.days > DateTime.now %>
   <span class="label label-danger">腹筋</span>
   <% elsif @ab + 7.days > DateTime.now %>
@@ -71,7 +70,6 @@
   <span class="label label-warning">腹筋</span>
   <% end %>
 
-
   <% if @zenwan + 1.days > DateTime.now %>
   <span class="label label-danger">前腕部</span>
   <% elsif @zenwan + 7.days > DateTime.now %>
@@ -79,4 +77,4 @@
   <% else%>
   <span class="label label-warning">前腕部</span>
   <% end %>
-</div>
+</h3>
