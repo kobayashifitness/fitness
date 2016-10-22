@@ -34,3 +34,11 @@ end
 CSV.foreach('db/muscle_mass.csv') do |row|
   MuscleMass.create(:profile_id => row[1], :muscle_mass => row[2], :fat => row[3], :diary_date => row[4])
 end
+
+CSV.foreach('db/users.csv') do |row|
+  User.create(:id => row[0], :created_at => row[1], :updated_at => row[2], :email => row[3], :password => row[4])
+end
+
+CSV.foreach('db/profile.csv') do |row|
+  Profile.create(:user_id => row[1])
+end
