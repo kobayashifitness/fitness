@@ -32,7 +32,7 @@
         <div id="slider_protein"></div>
       </div>
       <div class ="col-sm-3 ">
-            <%= f.text_field :protein_intake, placeholder: "摂取したタンパク質 [g]", value: @protein.protein_intake = 0 ,class: "form-control" %>
+        <%= f.text_field :protein_intake, placeholder: "摂取したタンパク質 [g]", value: @protein.protein_intake = 0 ,class: "form-control" %>
       </div>
     </div>
   </div>
@@ -47,11 +47,7 @@
       $('#protein_protein_intake').val(ui.value);
     }
   });
-
-
   </script>
-
-
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
@@ -60,10 +56,10 @@
   </div>
 
   <div>
-    <h1>
-    <p>1回のタンパク質量接種目安:30 g</p>
-    <p>接種間隔目安:3時間</p>
-  </h1>
+    <h2>
+      <p>1回の摂取タンパク質量目安：30g</p>
+      <p>摂取間隔目安：3時間</p>
+    </h1>
   </div>
 
   <% end %>
