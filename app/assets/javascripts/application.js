@@ -29,5 +29,5 @@
 //= require autocomplete_event_name
 //= require bootstrap-timepicker
 //= require jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon
-//= require jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-fr
+//= require jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ja
 $(document).on('turbolinks:load',function(){  $('.datetimepicker').datetimepicker()});
