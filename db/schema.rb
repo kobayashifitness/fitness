@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021190502) do
+ActiveRecord::Schema.define(version: 20161022115322) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -161,6 +161,8 @@ ActiveRecord::Schema.define(version: 20161021190502) do
     t.string   "last_sign_in_ip"
     t.integer  "failed_attempts",        default: 0,  null: false
     t.datetime "locked_at"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

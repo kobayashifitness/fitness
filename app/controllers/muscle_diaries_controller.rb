@@ -47,8 +47,9 @@ class MuscleDiariesController < ApplicationController
     if Event.find_by(event_name: @event.event_name) != nil
       @muscle_diary.event_id =  Event.find_by(event_name: @event.event_name).id
     else
-      @muscle_diary.event_id =  @event.id
+
       @event.save
+      @muscle_diary.event_id =  Event.last.id
     end
 
     respond_to do |format|
