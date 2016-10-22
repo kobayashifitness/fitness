@@ -37,6 +37,7 @@
 	  <% else %>
 	     <li class="navbar-text">ようこそ ゲスト さん</li>
 	     <li><%= link_to "サインイン", new_user_session_path %></li>
+       <li><%= link_to "Twitterでサインイン", user_twitter_omniauth_authorize_path(:twitter) %></li>
 	  <% end %>
         </ul>
       </div>

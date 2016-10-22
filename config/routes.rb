@@ -7,8 +7,13 @@ RailsMuscle::Application.routes.draw do
 
   devise_for :users, controllers: {
     # ユーザー登録時にプロフィールも生成するようにカスタマイズしたコントローラーを使用
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
+
+
+
+
 
   root to: 'homes#index'
 

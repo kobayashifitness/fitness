@@ -72,3 +72,4 @@ gem 'coderay'
 
 gem 'bower-rails', "~> 0.11.0"
 gem 'jquery-turbolinks'
+gem 'omniauth-twitter'
