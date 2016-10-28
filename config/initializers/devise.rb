@@ -265,5 +265,5 @@ Devise.setup do |config|
 
   # omniauth
   # 先ほど設定した値を記載して下さい。
-  config.omniauth :twitter, "kQoUNxzBKvM8q8V0TMIRy3BcM", "MezdVQRQdB69JG7dlyp1W6YaAcDH47CD55WZcMrhQ8tWQVECx4"
+  config.omniauth :twitter, "3duhgd2J5VrgUmeXBPS24QyCX", "rUXdCo2cHbRP4qr1CCGWcwqLQ2PHdCSjy0rr2G7vvFkjwb2jKc"
 end
