@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :muscle_diaries
   has_many :proteins
   has_many :messages
+  has_many :blocks
 
   def self.from_omniauth(auth)
   # providerとuidでUserレコードを取得する
